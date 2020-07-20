@@ -3,19 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		339B919824C5107900585999 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919724C5107900585999 /* HistoryView.swift */; };
+		339B919A24C5196E00585999 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919924C5196E00585999 /* TimerManager.swift */; };
+		339B919C24C5246200585999 /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919B24C5246200585999 /* ClockInView.swift */; };
+		339B919E24C52D9A00585999 /* ClockInTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919D24C52D9A00585999 /* ClockInTimeView.swift */; };
+		33D5FFBB24C4DA2C001461B6 /* TPImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */; };
 		33D986782499BAB10047618B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986772499BAB10047618B /* AppDelegate.swift */; };
 		33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986792499BAB10047618B /* SceneDelegate.swift */; };
 		33D9867C2499BAB10047618B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9867B2499BAB10047618B /* ContentView.swift */; };
 		33D9867E2499BAB40047618B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D9867D2499BAB40047618B /* Assets.xcassets */; };
 		33D986812499BAB40047618B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D986802499BAB40047618B /* Preview Assets.xcassets */; };
 		33D986842499BAB50047618B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D986822499BAB50047618B /* LaunchScreen.storyboard */; };
+		33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */; };
+		33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */; };
+		33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */; };
+		BECB8C59DF7C16E6917ECF25 /* Pods_NOVA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481CE30D5F2B61DD2290CECA /* Pods_NOVA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		339B919724C5107900585999 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		339B919924C5196E00585999 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		339B919B24C5246200585999 /* ClockInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
+		339B919D24C52D9A00585999 /* ClockInTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInTimeView.swift; sourceTree = "<group>"; };
+		33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPImagePicker.swift; sourceTree = "<group>"; };
 		33D986742499BAB10047618B /* NOVA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOVA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D986772499BAB10047618B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D986792499BAB10047618B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +38,12 @@
 		33D986802499BAB40047618B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		33D986832499BAB50047618B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D986852499BAB50047618B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiImagePicker.swift; path = ../MultiImagePicker.swift; sourceTree = "<group>"; };
+		425E1A9731EC1EB76A746C61 /* Pods-NOVA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA.debug.xcconfig"; path = "Target Support Files/Pods-NOVA/Pods-NOVA.debug.xcconfig"; sourceTree = "<group>"; };
+		481CE30D5F2B61DD2290CECA /* Pods_NOVA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOVA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91049ACC71115EF1D114B5F /* Pods-NOVA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA.release.xcconfig"; path = "Target Support Files/Pods-NOVA/Pods-NOVA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECB8C59DF7C16E6917ECF25 /* Pods_NOVA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +63,8 @@
 			children = (
 				33D986762499BAB10047618B /* NOVA */,
 				33D986752499BAB10047618B /* Products */,
+				F5B00E082661FB86FAF5F35F /* Pods */,
+				64FA6F63BB8D1D042C9295E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +79,21 @@
 		33D986762499BAB10047618B /* NOVA */ = {
 			isa = PBXGroup;
 			children = (
+				33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */,
 				33D986772499BAB10047618B /* AppDelegate.swift */,
 				33D986792499BAB10047618B /* SceneDelegate.swift */,
 				33D9867B2499BAB10047618B /* ContentView.swift */,
+				339B919D24C52D9A00585999 /* ClockInTimeView.swift */,
+				339B919B24C5246200585999 /* ClockInView.swift */,
+				339B919724C5107900585999 /* HistoryView.swift */,
+				33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */,
+				339B919924C5196E00585999 /* TimerManager.swift */,
+				33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */,
 				33D9867D2499BAB40047618B /* Assets.xcassets */,
 				33D986822499BAB50047618B /* LaunchScreen.storyboard */,
 				33D986852499BAB50047618B /* Info.plist */,
 				33D9867F2499BAB40047618B /* Preview Content */,
+				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
 			);
 			path = NOVA;
 			sourceTree = "<group>";
@@ -75,6 +106,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		64FA6F63BB8D1D042C9295E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				481CE30D5F2B61DD2290CECA /* Pods_NOVA.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5B00E082661FB86FAF5F35F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				425E1A9731EC1EB76A746C61 /* Pods-NOVA.debug.xcconfig */,
+				B91049ACC71115EF1D114B5F /* Pods-NOVA.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33D986882499BAB50047618B /* Build configuration list for PBXNativeTarget "NOVA" */;
 			buildPhases = (
+				D6D3AEDF5B1AB80E573A28DE /* [CP] Check Pods Manifest.lock */,
 				33D986702499BAB10047618B /* Sources */,
 				33D986712499BAB10047618B /* Frameworks */,
 				33D986722499BAB10047618B /* Resources */,
+				EF358590C0D1CC1E8A9AD9BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,12 +191,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D6D3AEDF5B1AB80E573A28DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NOVA-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF358590C0D1CC1E8A9AD9BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33D986702499BAB10047618B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D5FFBB24C4DA2C001461B6 /* TPImagePicker.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
+				339B919C24C5246200585999 /* ClockInView.swift in Sources */,
+				339B919E24C52D9A00585999 /* ClockInTimeView.swift in Sources */,
+				339B919824C5107900585999 /* HistoryView.swift in Sources */,
+				33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */,
+				33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */,
+				33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */,
+				339B919A24C5196E00585999 /* TimerManager.swift in Sources */,
 				33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */,
 				33D9867C2499BAB10047618B /* ContentView.swift in Sources */,
 			);
@@ -282,6 +382,7 @@
 		};
 		33D986892499BAB50047618B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 425E1A9731EC1EB76A746C61 /* Pods-NOVA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -293,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nova.NOVA;
+				PRODUCT_BUNDLE_IDENTIFIER = nova.novacovici.NOVA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,6 +403,7 @@
 		};
 		33D9868A2499BAB50047618B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B91049ACC71115EF1D114B5F /* Pods-NOVA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nova.NOVA;
+				PRODUCT_BUNDLE_IDENTIFIER = nova.novacovici.NOVA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
