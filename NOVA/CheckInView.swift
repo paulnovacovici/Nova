@@ -88,18 +88,16 @@ struct CheckInView: View {
                         TPImagePicker(images: self.$storeForm.images)
                     }
                 }
-                
-                Section {
-                    Button(action: {
-                        // Execute POST request to server.
-                        self.storeForm.reset()
-                    }) {
-                        Text("Submit")
-                    }.disabled(!self.storeForm.canSubmit())
-                }
             }
                 .navigationBarTitle("Check-in")
-                .navigationBarItems(leading: ClockInTimeView().environmentObject(clockedInTimer))
+                .navigationBarItems(
+                    leading: ClockInTimeView().environmentObject(clockedInTimer),
+                    trailing: Button(action: {
+                                // Execute POST request to server.
+                                self.storeForm.reset()
+                            }) {
+                                Text("Submit")
+                            }.disabled(!self.storeForm.canSubmit()))
         }
     }
 }
