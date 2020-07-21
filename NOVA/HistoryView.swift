@@ -10,31 +10,40 @@ import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject var clockedInTimer : TimerManager
+    @State private var data = [StoreCheckIn]()
     
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .long
+        formatter.dateFormat = "MM/dd/yy"
         return formatter
     }()
     
     var body: some View {
         NavigationView {
             List {
-                HStack {
-                    Text("Woodmans")
-                    Spacer()
-                    Text("\(Date(), formatter: Self.taskDateFormat)")
+                ForEach(self.data) { storeCheckIn in
+                    HStack {
+                        Text(storeCheckIn.storeName)
+                        Spacer()
+                        Text("\(storeCheckIn.arrivalTime, formatter: Self.taskDateFormat)")
+                    }
                 }
             }
             .navigationBarTitle(Text("History"))
             .navigationBarItems(leading: ClockInTimeView().environmentObject(clockedInTimer))
-        }
-        
+        }.onAppear(perform: loadData)
+    }
+    
+    func loadData() {
+        // TODO: Do network request to get history of user data
+//        https://www.hackingwithswift.com/books/ios-swiftui/sending-and-receiving-codable-data-with-urlsession-and-swiftui
+        self.data = storeCheckInData.sorted(by: { $0.arrivalTime.compare($1.arrivalTime) == .orderedDescending
+        })
     }
 }
 
 struct History_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView().environmentObject(TimerManager())
     }
 }

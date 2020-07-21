@@ -11,6 +11,10 @@
 		339B919A24C5196E00585999 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919924C5196E00585999 /* TimerManager.swift */; };
 		339B919C24C5246200585999 /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919B24C5246200585999 /* ClockInView.swift */; };
 		339B919E24C52D9A00585999 /* ClockInTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919D24C52D9A00585999 /* ClockInTimeView.swift */; };
+		339B91A124C65DBA00585999 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A024C65DBA00585999 /* Data.swift */; };
+		339B91A324C65E3200585999 /* StoreCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A224C65E3200585999 /* StoreCheckIn.swift */; };
+		339B91A824C65FFB00585999 /* mockCheckInData.json in Resources */ = {isa = PBXBuildFile; fileRef = 339B91A724C65FFB00585999 /* mockCheckInData.json */; };
+		339B91AA24C6A6FF00585999 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A924C6A6FF00585999 /* MapView.swift */; };
 		33D5FFBB24C4DA2C001461B6 /* TPImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */; };
 		33D986782499BAB10047618B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986772499BAB10047618B /* AppDelegate.swift */; };
 		33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986792499BAB10047618B /* SceneDelegate.swift */; };
@@ -29,6 +33,10 @@
 		339B919924C5196E00585999 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		339B919B24C5246200585999 /* ClockInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
 		339B919D24C52D9A00585999 /* ClockInTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInTimeView.swift; sourceTree = "<group>"; };
+		339B91A024C65DBA00585999 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		339B91A224C65E3200585999 /* StoreCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCheckIn.swift; sourceTree = "<group>"; };
+		339B91A724C65FFB00585999 /* mockCheckInData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockCheckInData.json; sourceTree = "<group>"; };
+		339B91A924C6A6FF00585999 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPImagePicker.swift; sourceTree = "<group>"; };
 		33D986742499BAB10047618B /* NOVA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOVA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D986772499BAB10047618B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		339B919F24C65D8300585999 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				339B91A024C65DBA00585999 /* Data.swift */,
+				339B91A224C65E3200585999 /* StoreCheckIn.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		339B91A424C65FA900585999 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				339B91A724C65FFB00585999 /* mockCheckInData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		33D9866B2499BAB10047618B = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +104,15 @@
 		33D986762499BAB10047618B /* NOVA */ = {
 			isa = PBXGroup;
 			children = (
+				339B91A424C65FA900585999 /* Resources */,
+				339B919F24C65D8300585999 /* Models */,
 				33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */,
 				33D986772499BAB10047618B /* AppDelegate.swift */,
 				33D986792499BAB10047618B /* SceneDelegate.swift */,
 				33D9867B2499BAB10047618B /* ContentView.swift */,
 				339B919D24C52D9A00585999 /* ClockInTimeView.swift */,
 				339B919B24C5246200585999 /* ClockInView.swift */,
+				339B91A924C6A6FF00585999 /* MapView.swift */,
 				339B919724C5107900585999 /* HistoryView.swift */,
 				33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */,
 				339B919924C5196E00585999 /* TimerManager.swift */,
@@ -184,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D986842499BAB50047618B /* LaunchScreen.storyboard in Resources */,
+				339B91A824C65FFB00585999 /* mockCheckInData.json in Resources */,
 				33D986812499BAB40047618B /* Preview Assets.xcassets in Resources */,
 				33D9867E2499BAB40047618B /* Assets.xcassets in Resources */,
 			);
@@ -238,13 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339B91A324C65E3200585999 /* StoreCheckIn.swift in Sources */,
 				33D5FFBB24C4DA2C001461B6 /* TPImagePicker.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
 				339B919C24C5246200585999 /* ClockInView.swift in Sources */,
 				339B919E24C52D9A00585999 /* ClockInTimeView.swift in Sources */,
 				339B919824C5107900585999 /* HistoryView.swift in Sources */,
 				33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */,
+				339B91AA24C6A6FF00585999 /* MapView.swift in Sources */,
 				33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */,
+				339B91A124C65DBA00585999 /* Data.swift in Sources */,
 				33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */,
 				339B919A24C5196E00585999 /* TimerManager.swift in Sources */,
 				33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */,

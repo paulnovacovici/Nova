@@ -104,6 +104,6 @@ struct CheckInView: View {
 
 struct StoreForm_Previews: PreviewProvider {
     static var previews: some View {
-             CheckInView()
+             CheckInView().environmentObject(TimerManager())
     }
 }

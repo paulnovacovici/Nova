@@ -14,24 +14,31 @@ struct ClockInView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if (clockedInTimer.mode == .stopped) {
-                    Button(action: {
-                        self.clockedInTimer.start()
-                    }) {
-                        Text("Clock In")
-                    }
-                } else {
-                    Button(action: {
-                        self.clockedInTimer.stop()
-                    }) {
-                        Text("Clock out")
-                    }
-                }
+                MapView().edgesIgnoringSafeArea(.all)
                 
+
             }
-            .navigationBarItems(leading: ClockInTimeView().environmentObject(clockedInTimer))
+            .navigationBarItems(
+                leading: ClockInTimeView().environmentObject(clockedInTimer),
+                trailing: clockInButton)
         }
-        
+    }
+    
+    var clockInButton: some View {
+        Button(action: {
+            self.clockedInTimer.toggle()
+        }) {
+                HStack {
+                        Text(clockedInTimer.mode == .stopped ? "Clock-in" : "Clock-out")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                        Image(systemName: "clock")
+                }
+                .padding(10)
+            }
+            .background(Color.white)
+            .cornerRadius(10)
+            .opacity(0.9)
     }
 }
 

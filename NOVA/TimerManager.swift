@@ -9,16 +9,22 @@
 import Foundation
 import SwiftUI
 
-enum StopWatchMode {
-    case running
-    case stopped
-    case paused
-}
-
 class TimerManager: ObservableObject {
     @Published var secondsElapsed = 0
     @Published var mode: StopWatchMode = .stopped
     var timer = Timer()
+    
+    enum StopWatchMode {
+        case running
+        case stopped
+        case paused
+    }
+    
+    func stop() {
+        mode = .stopped
+        timer.invalidate()
+        secondsElapsed = 0
+    }
     
     func start() {
         mode = .running
@@ -27,9 +33,11 @@ class TimerManager: ObservableObject {
         })
     }
     
-    func stop() {
-        mode = .stopped
-        timer.invalidate()
-        secondsElapsed = 0
+    func toggle() {
+        if mode == .running {
+            stop()
+        } else {
+            start()
+        }
     }
 }

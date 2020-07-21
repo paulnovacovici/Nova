@@ -1,0 +1,42 @@
+[
+    {
+        "id": 3,
+        "storeName": "Target",
+        "managerIn": false,
+        "spokeTo": "",
+        "arrivalTime": "2020-07-24T19:32:00Z",
+        "needs": "3 pallets of Vodka"
+    },
+    {
+        "id": 2,
+        "storeName": "Walmart",
+        "managerIn": true,
+        "spokeTo": "Wally",
+        "arrivalTime": "2020-07-22T19:32:00Z",
+        "needs": "2 pallets of Icelandic"
+    },
+    {
+        "id": 1,
+        "storeName": "Woodmans",
+        "managerIn": false,
+        "spokeTo": "",
+        "arrivalTime": "2019-07-21T19:32:00Z",
+        "needs": "3 pallets of Redbull"
+    },
+    {
+        "id": 4,
+        "storeName": "Woodmans",
+        "managerIn": false,
+        "spokeTo": "",
+        "arrivalTime": "2020-07-01T19:32:00Z",
+        "needs": "3 pallets of Redbull"
+    },
+    {
+        "id": 5,
+        "storeName": "Woodmans",
+        "managerIn": false,
+        "spokeTo": "",
+        "arrivalTime": "2020-06-21T19:32:00Z",
+        "needs": "3 pallets of Redbull"
+    }
+]

@@ -34,7 +34,16 @@ struct ClockInTimeView: View {
 }
 
 struct ClockInTime_Previews: PreviewProvider {
+    static var timeManager: TimerManager {
+        get{
+            let t = TimerManager()
+            t.mode = .running
+            t.start()
+            return t
+        }
+    }
+    
     static var previews: some View {
-        ClockInTimeView().environmentObject(TimerManager())
+        ClockInTimeView().environmentObject(timeManager)
     }
 }
