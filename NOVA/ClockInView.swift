@@ -10,14 +10,15 @@ import SwiftUI
 
 struct ClockInView: View {
     @EnvironmentObject var clockedInTimer : TimerManager
+    @State var alert = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                MapView().edgesIgnoringSafeArea(.all)
-                
-
-            }
+            MapView(alert: $alert)
+                .edgesIgnoringSafeArea(.all)
+                .alert(isPresented: $alert) {
+                    Alert(title: Text("Please enable location access in settings panel."))
+                }
             .navigationBarItems(
                 leading: ClockInTimeView().environmentObject(clockedInTimer),
                 trailing: clockInButton)
