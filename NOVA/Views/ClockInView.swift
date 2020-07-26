@@ -14,7 +14,7 @@ struct ClockInView: View {
     
     var body: some View {
         NavigationView {
-            MapView(alert: $alert)
+            MapView()
                 .edgesIgnoringSafeArea(.all)
                 .alert(isPresented: $alert) {
                     Alert(title: Text("Please enable location access in settings panel."))
