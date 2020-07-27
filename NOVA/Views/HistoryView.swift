@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @EnvironmentObject var clockedInTimer : TimerManager
+    @EnvironmentObject var locationManager : LocationManager
     @State private var data = [StoreCheckIn]()
     
     static let taskDateFormat: DateFormatter = {
@@ -30,7 +30,7 @@ struct HistoryView: View {
                 }
             }
             .navigationBarTitle(Text("History"))
-            .navigationBarItems(leading: ClockInTimeView().environmentObject(clockedInTimer))
+            .navigationBarItems(leading: TimerView().environmentObject(locationManager))
         }.onAppear(perform: loadData)
     }
     

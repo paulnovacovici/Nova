@@ -9,34 +9,42 @@
 import SwiftUI
 
 struct ClockInView: View {
-    @EnvironmentObject var clockedInTimer : TimerManager
+    @EnvironmentObject var locationManager : LocationManager
     @State var alert = false
+    @State var showSheet = false
     
     var body: some View {
         NavigationView {
-            MapView()
+            MainMapView()
                 .edgesIgnoringSafeArea(.all)
                 .alert(isPresented: $alert) {
                     Alert(title: Text("Please enable location access in settings panel."))
                 }
             .navigationBarItems(
-                leading: ClockInTimeView().environmentObject(clockedInTimer),
+                leading: TimerView().environmentObject(locationManager),
                 trailing: clockInButton)
-        }
+        }.environmentObject(locationManager)
     }
     
     var clockInButton: some View {
         Button(action: {
-            self.clockedInTimer.toggle()
+            self.locationManager.toggle()
+            
+            if self.locationManager.mode == .stopped {
+                self.showSheet = true
+            }
         }) {
                 HStack {
-                        Text(clockedInTimer.mode == .stopped ? "Clock-in" : "Clock-out")
+                        Text(locationManager.mode == .stopped ? "Clock-in" : "Clock-out")
                             .font(.headline)
                             .fontWeight(.bold)
                         Image(systemName: "clock")
                 }
                 .padding(10)
             }
+        .sheet(isPresented: $showSheet) {
+            RouteView(show: self.$showSheet,locations: self.locationManager.locationList, distance: self.locationManager.distance, totalTime: self.locationManager.seconds)
+        }
             .background(Color.white)
             .cornerRadius(10)
             .opacity(0.9)
@@ -45,6 +53,6 @@ struct ClockInView: View {
 
 struct ClockInView_Previews: PreviewProvider {
     static var previews: some View {
-        ClockInView().environmentObject(TimerManager())
+        ClockInView().environmentObject(TimerManager()).environmentObject(LocationManager())
     }
 }

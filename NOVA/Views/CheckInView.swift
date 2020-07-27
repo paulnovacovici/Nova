@@ -33,7 +33,7 @@ class StoreForm: ObservableObject {
 }
 
 struct CheckInView: View {
-    @EnvironmentObject var clockedInTimer : TimerManager
+    @EnvironmentObject var locationManager : LocationManager
     @ObservedObject var storeForm = StoreForm()
     @State var show = false
     
@@ -91,7 +91,7 @@ struct CheckInView: View {
             }
                 .navigationBarTitle("Check-in")
                 .navigationBarItems(
-                    leading: ClockInTimeView().environmentObject(clockedInTimer),
+                    leading: TimerView().environmentObject(locationManager),
                     trailing: Button(action: {
                                 // Execute POST request to server.
                                 self.storeForm.reset()

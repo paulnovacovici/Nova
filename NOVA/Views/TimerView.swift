@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct ClockInTimeView: View {
-    @EnvironmentObject var clockedInTimer : TimerManager
+struct TimerView: View {
+    @EnvironmentObject var locationManager : LocationManager
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> String {
         let formatter = DateComponentsFormatter()
@@ -21,9 +21,9 @@ struct ClockInTimeView: View {
     
     var body: some View {
         Group {
-            if self.clockedInTimer.mode == .running {
+            if self.locationManager.mode == .running {
                 HStack {
-                    Text(secondsToHoursMinutesSeconds(seconds: clockedInTimer.secondsElapsed))
+                    Text(secondsToHoursMinutesSeconds(seconds: locationManager.seconds))
                     Image(systemName: "clock")
                 }.foregroundColor(Color.green)
             } else {
@@ -44,6 +44,6 @@ struct ClockInTime_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        ClockInTimeView().environmentObject(timeManager)
+        TimerView().environmentObject(timeManager)
     }
 }

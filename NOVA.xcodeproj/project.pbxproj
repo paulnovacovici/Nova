@@ -9,14 +9,17 @@
 /* Begin PBXBuildFile section */
 		33075DDA24CC94920066DFD2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DD924CC94920066DFD2 /* LocationManager.swift */; };
 		33075DDC24CE37A20066DFD2 /* UIKitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */; };
+		33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDD24CE861E0066DFD2 /* RouteView.swift */; };
+		33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDF24CE94A80066DFD2 /* RouteMapView.swift */; };
+		33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */; };
 		339B919824C5107900585999 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919724C5107900585999 /* HistoryView.swift */; };
 		339B919A24C5196E00585999 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919924C5196E00585999 /* TimerManager.swift */; };
 		339B919C24C5246200585999 /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919B24C5246200585999 /* ClockInView.swift */; };
-		339B919E24C52D9A00585999 /* ClockInTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919D24C52D9A00585999 /* ClockInTimeView.swift */; };
+		339B919E24C52D9A00585999 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919D24C52D9A00585999 /* TimerView.swift */; };
 		339B91A124C65DBA00585999 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A024C65DBA00585999 /* Data.swift */; };
 		339B91A324C65E3200585999 /* StoreCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A224C65E3200585999 /* StoreCheckIn.swift */; };
 		339B91A824C65FFB00585999 /* mockCheckInData.json in Resources */ = {isa = PBXBuildFile; fileRef = 339B91A724C65FFB00585999 /* mockCheckInData.json */; };
-		339B91AA24C6A6FF00585999 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A924C6A6FF00585999 /* MapView.swift */; };
+		339B91AA24C6A6FF00585999 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A924C6A6FF00585999 /* MainMapView.swift */; };
 		33D5FFBB24C4DA2C001461B6 /* TPImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */; };
 		33D986782499BAB10047618B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986772499BAB10047618B /* AppDelegate.swift */; };
 		33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986792499BAB10047618B /* SceneDelegate.swift */; };
@@ -33,14 +36,17 @@
 /* Begin PBXFileReference section */
 		33075DD924CC94920066DFD2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTabView.swift; sourceTree = "<group>"; };
+		33075DDD24CE861E0066DFD2 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		33075DDF24CE94A80066DFD2 /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
+		33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulticolorPolyline.swift; path = NOVA/Views/MulticolorPolyline.swift; sourceTree = SOURCE_ROOT; };
 		339B919724C5107900585999 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		339B919924C5196E00585999 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		339B919B24C5246200585999 /* ClockInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
-		339B919D24C52D9A00585999 /* ClockInTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInTimeView.swift; sourceTree = "<group>"; };
+		339B919D24C52D9A00585999 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		339B91A024C65DBA00585999 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		339B91A224C65E3200585999 /* StoreCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCheckIn.swift; sourceTree = "<group>"; };
 		339B91A724C65FFB00585999 /* mockCheckInData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockCheckInData.json; sourceTree = "<group>"; };
-		339B91A924C6A6FF00585999 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		339B91A924C6A6FF00585999 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPImagePicker.swift; sourceTree = "<group>"; };
 		33D986742499BAB10047618B /* NOVA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOVA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D986772499BAB10047618B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +82,11 @@
 				33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */,
 				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
 				33D9867B2499BAB10047618B /* ContentView.swift */,
-				339B919D24C52D9A00585999 /* ClockInTimeView.swift */,
+				339B919D24C52D9A00585999 /* TimerView.swift */,
 				339B919B24C5246200585999 /* ClockInView.swift */,
-				339B91A924C6A6FF00585999 /* MapView.swift */,
+				33075DDD24CE861E0066DFD2 /* RouteView.swift */,
+				339B91A924C6A6FF00585999 /* MainMapView.swift */,
+				33075DDF24CE94A80066DFD2 /* RouteMapView.swift */,
 				339B919724C5107900585999 /* HistoryView.swift */,
 				33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */,
 				33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */,
@@ -90,6 +98,7 @@
 		33075DD824CC944C0066DFD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */,
 				339B919924C5196E00585999 /* TimerManager.swift */,
 				33075DD924CC94920066DFD2 /* LocationManager.swift */,
 			);
@@ -292,17 +301,20 @@
 				339B91A324C65E3200585999 /* StoreCheckIn.swift in Sources */,
 				33D5FFBB24C4DA2C001461B6 /* TPImagePicker.swift in Sources */,
 				33075DDA24CC94920066DFD2 /* LocationManager.swift in Sources */,
+				33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
 				339B919C24C5246200585999 /* ClockInView.swift in Sources */,
 				33075DDC24CE37A20066DFD2 /* UIKitTabView.swift in Sources */,
-				339B919E24C52D9A00585999 /* ClockInTimeView.swift in Sources */,
+				339B919E24C52D9A00585999 /* TimerView.swift in Sources */,
 				339B919824C5107900585999 /* HistoryView.swift in Sources */,
 				33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */,
-				339B91AA24C6A6FF00585999 /* MapView.swift in Sources */,
+				339B91AA24C6A6FF00585999 /* MainMapView.swift in Sources */,
 				33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */,
 				339B91A124C65DBA00585999 /* Data.swift in Sources */,
+				33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */,
 				33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */,
 				339B919A24C5196E00585999 /* TimerManager.swift in Sources */,
+				33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */,
 				33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */,
 				33D9867C2499BAB10047618B /* ContentView.swift in Sources */,
 			);

@@ -8,20 +8,27 @@
 
 import CoreLocation
 import MapKit
-
+import Combine
 
 class LocationManager: NSObject, ObservableObject {
-    static let shared = LocationManager()
+//    static let shared = LocationManager()
     
     @Published var status: CLAuthorizationStatus?
-    @Published var clockedInTimer = TimerManager()
+    @Published var seconds = 0
+    @Published var mode: TrackingMode = .stopped
     
     var manager = CLLocationManager()
     var delegate: MKMapView?
     var locationList : [CLLocation] = []
     var distance = Measurement(value: 0, unit: UnitLength.meters)
+    var timer = Timer()
+    
+    enum TrackingMode {
+        case running
+        case stopped
+    }
   
-    private override init() {
+    override init() {
         super.init()
         
         manager.delegate = self
@@ -29,14 +36,26 @@ class LocationManager: NSObject, ObservableObject {
         manager.requestWhenInUseAuthorization()
     }
     
+    func toggle() {
+        if mode == .running {
+            stop()
+        } else {
+            start()
+        }
+    }
+    
     func start() {
+        mode = .running
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+          self.seconds += 1
+        }
         // TODO: need to test what happens when start is called and status is denied
-        clockedInTimer.toggle()
         manager.startUpdatingLocation()
     }
     
     func stop() {
-        clockedInTimer.toggle()
+        mode = .stopped
+        timer.invalidate()
         manager.stopUpdatingLocation()
     }
 }
