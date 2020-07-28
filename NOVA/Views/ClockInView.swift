@@ -42,7 +42,9 @@ struct ClockInView: View {
                 }
                 .padding(10)
             }
-        .sheet(isPresented: $showSheet) {
+        .sheet(isPresented: $showSheet, onDismiss: {
+            self.locationManager.reset()
+        }) {
             RouteView(show: self.$showSheet,locations: self.locationManager.locationList, distance: self.locationManager.distance, totalTime: self.locationManager.seconds)
         }
             .background(Color.white)

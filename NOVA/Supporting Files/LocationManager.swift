@@ -36,6 +36,12 @@ class LocationManager: NSObject, ObservableObject {
         manager.requestWhenInUseAuthorization()
     }
     
+    func reset() {
+        seconds = 0
+        distance = Measurement(value: 0, unit: UnitLength.meters)
+        locationList = []
+    }
+    
     func toggle() {
         if mode == .running {
             stop()
