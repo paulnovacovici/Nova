@@ -72,7 +72,7 @@ struct RouteView: View {
         Button(action: {
             self.show = false
         }) {
-            Text("Cancel").bold()
+            Text("Cancel")
         }
     }
     
@@ -81,7 +81,7 @@ struct RouteView: View {
             // TODO: Send data to database
             self.show = false
         }) {
-            Text("Submit").bold()
+            Text("Submit")
         }
     }
 }
