@@ -8,11 +8,7 @@
 
 import SwiftUI
 
-class UserSettings: ObservableObject {
-    @Published var onClockTime = TimerManager()
-}
-
-struct ContentView: View {
+struct App: View {
     var body: some View {
         TabView {
             CheckInView()
@@ -33,17 +29,35 @@ struct ContentView: View {
                     Text("History")
             }
             
-            Text("Settings Screen")
+            SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
             }
-            }.environmentObject(LocationManager())
+        }.environmentObject(LocationManager())
+    }
+}
+
+struct ContentView: View {
+    @EnvironmentObject var session: SessionStore
+    
+    var body: some View {
+        Group {
+            if (session.session != nil) {
+                App()
+            } else {
+                AuthView()
+            }
+        }.onAppear(perform: getUser)
+    }
+    
+    func getUser() {
+        session.listen()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject((SessionStore()))
     }
 }

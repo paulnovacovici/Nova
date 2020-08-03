@@ -27,6 +27,10 @@
 		33D9867E2499BAB40047618B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D9867D2499BAB40047618B /* Assets.xcassets */; };
 		33D986812499BAB40047618B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D986802499BAB40047618B /* Preview Assets.xcassets */; };
 		33D986842499BAB50047618B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D986822499BAB50047618B /* LaunchScreen.storyboard */; };
+		33EDA2DD24D74569002632A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33EDA2DC24D74569002632A7 /* GoogleService-Info.plist */; };
+		33EDA2DF24D74872002632A7 /* FirebaseSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */; };
+		33EDA2E124D74E2B002632A7 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E024D74E2B002632A7 /* AuthView.swift */; };
+		33EDA2E324D77183002632A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E224D77183002632A7 /* SettingsView.swift */; };
 		33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */; };
 		33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */; };
 		33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */; };
@@ -56,6 +60,10 @@
 		33D986802499BAB40047618B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		33D986832499BAB50047618B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D986852499BAB50047618B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33EDA2DC24D74569002632A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSessionManager.swift; sourceTree = "<group>"; };
+		33EDA2E024D74E2B002632A7 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		33EDA2E224D77183002632A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
@@ -79,9 +87,11 @@
 		33075DD724CC94220066DFD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33D9867B2499BAB10047618B /* ContentView.swift */,
 				33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */,
 				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
-				33D9867B2499BAB10047618B /* ContentView.swift */,
+				33EDA2E224D77183002632A7 /* SettingsView.swift */,
+				33EDA2E024D74E2B002632A7 /* AuthView.swift */,
 				339B919D24C52D9A00585999 /* TimerView.swift */,
 				339B919B24C5246200585999 /* ClockInView.swift */,
 				33075DDD24CE861E0066DFD2 /* RouteView.swift */,
@@ -101,6 +111,7 @@
 				33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */,
 				339B919924C5196E00585999 /* TimerManager.swift */,
 				33075DD924CC94920066DFD2 /* LocationManager.swift */,
+				33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +163,7 @@
 				33D9867D2499BAB40047618B /* Assets.xcassets */,
 				33D986822499BAB50047618B /* LaunchScreen.storyboard */,
 				33D986852499BAB50047618B /* Info.plist */,
+				33EDA2DC24D74569002632A7 /* GoogleService-Info.plist */,
 				33D9867F2499BAB40047618B /* Preview Content */,
 			);
 			path = NOVA;
@@ -244,6 +256,7 @@
 			files = (
 				33D986842499BAB50047618B /* LaunchScreen.storyboard in Resources */,
 				339B91A824C65FFB00585999 /* mockCheckInData.json in Resources */,
+				33EDA2DD24D74569002632A7 /* GoogleService-Info.plist in Resources */,
 				33D986812499BAB40047618B /* Preview Assets.xcassets in Resources */,
 				33D9867E2499BAB40047618B /* Assets.xcassets in Resources */,
 			);
@@ -304,6 +317,7 @@
 				33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
 				339B919C24C5246200585999 /* ClockInView.swift in Sources */,
+				33EDA2DF24D74872002632A7 /* FirebaseSessionManager.swift in Sources */,
 				33075DDC24CE37A20066DFD2 /* UIKitTabView.swift in Sources */,
 				339B919E24C52D9A00585999 /* TimerView.swift in Sources */,
 				339B919824C5107900585999 /* HistoryView.swift in Sources */,
@@ -311,12 +325,14 @@
 				339B91AA24C6A6FF00585999 /* MainMapView.swift in Sources */,
 				33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */,
 				339B91A124C65DBA00585999 /* Data.swift in Sources */,
+				33EDA2E124D74E2B002632A7 /* AuthView.swift in Sources */,
 				33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */,
 				33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */,
 				339B919A24C5196E00585999 /* TimerManager.swift in Sources */,
 				33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */,
 				33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */,
 				33D9867C2499BAB10047618B /* ContentView.swift in Sources */,
+				33EDA2E324D77183002632A7 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
