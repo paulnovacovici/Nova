@@ -31,6 +31,8 @@
 		33EDA2DF24D74872002632A7 /* FirebaseSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */; };
 		33EDA2E124D74E2B002632A7 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E024D74E2B002632A7 /* AuthView.swift */; };
 		33EDA2E324D77183002632A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E224D77183002632A7 /* SettingsView.swift */; };
+		33EDA2E524DBC940002632A7 /* TextBindingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E424DBC940002632A7 /* TextBindingManager.swift */; };
+		33EDA2E724DBD0E2002632A7 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */; };
 		33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */; };
 		33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */; };
 		33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */; };
@@ -64,6 +66,8 @@
 		33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSessionManager.swift; sourceTree = "<group>"; };
 		33EDA2E024D74E2B002632A7 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		33EDA2E224D77183002632A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		33EDA2E424DBC940002632A7 /* TextBindingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextBindingManager.swift; sourceTree = "<group>"; };
+		33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardResponder.swift; path = NOVA/Views/KeyboardResponder.swift; sourceTree = SOURCE_ROOT; };
 		33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
@@ -108,10 +112,12 @@
 		33075DD824CC944C0066DFD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */,
 				33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */,
 				339B919924C5196E00585999 /* TimerManager.swift */,
 				33075DD924CC94920066DFD2 /* LocationManager.swift */,
 				33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */,
+				33EDA2E424DBC940002632A7 /* TextBindingManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,9 +322,11 @@
 				33075DDA24CC94920066DFD2 /* LocationManager.swift in Sources */,
 				33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
+				33EDA2E724DBD0E2002632A7 /* KeyboardResponder.swift in Sources */,
 				339B919C24C5246200585999 /* ClockInView.swift in Sources */,
 				33EDA2DF24D74872002632A7 /* FirebaseSessionManager.swift in Sources */,
 				33075DDC24CE37A20066DFD2 /* UIKitTabView.swift in Sources */,
+				33EDA2E524DBC940002632A7 /* TextBindingManager.swift in Sources */,
 				339B919E24C52D9A00585999 /* TimerView.swift in Sources */,
 				339B919824C5107900585999 /* HistoryView.swift in Sources */,
 				33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */,

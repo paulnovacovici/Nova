@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SignInView: View {
     @State var email: String = ""
@@ -40,12 +41,12 @@ struct SignInView: View {
                 TextField("Email Address", text: $email)
                     .font(.system(size: 14))
                     .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black).opacity(0.7), lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
                 
                 SecureField("Password", text: $password)
                     .font(.system(size: 14))
                     .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black).opacity(0.7), lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
             }
             .padding(.vertical, 64)
             
@@ -81,19 +82,47 @@ struct SignInView: View {
 struct SignUpView: View {
     @State var email: String = ""
     @State var password: String = ""
+    @State var confirmPassword: String = ""
     @State var error: String = ""
     @State var showAlert: Bool = false
+    @State var firstName: String = ""
+    @State var lastName: String = ""
+    @State var phoneNumber: String = ""
+    
+    @ObservedObject var keyboardResponder = KeyboardResponder()
+    @ObservedObject var areaCode = TextBindingManager(limit: 1)
+    
     @EnvironmentObject var session: SessionStore
     
+    func verifyFields() -> Bool {
+        return email.count > 0 &&
+            password.count > 0 &&
+            firstName.count > 0 &&
+            lastName.count > 0 &&
+            areaCode.text.count > 0 &&
+            phoneNumber.count > 0
+    }
+    
     func signUp() {
-        session.signUp(email: email, password: password) { (result, error) in
-            if let error = error {
-                self.error = error.localizedDescription
-                self.showAlert = true
-            } else {
-                self.email = ""
-                self.password = ""
+        if phoneNumber.count != 10 {
+            self.error = "Phone number length isn't correct length"
+            self.showAlert = true
+        } else if password != confirmPassword {
+            self.error = "Passwords do not match."
+            self.showAlert = true
+        } else if verifyFields(){
+            session.signUp(email: email, password: password) { (result, error) in
+                if let error = error {
+                    self.error = error.localizedDescription
+                    self.showAlert = true
+                } else {
+                    self.email = ""
+                    self.password = ""
+                }
             }
+        } else {
+            self.error = "Please Fill in all Fields"
+            self.showAlert = true
         }
     }
     
@@ -107,15 +136,47 @@ struct SignUpView: View {
                 .foregroundColor(.gray)
             
             VStack(spacing: 18) {
+                HStack {
+                    TextField("First Name", text: $firstName)
+                        .font(.system(size: 14))
+                        .padding(12)
+                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
+                    
+                    TextField("Last Name", text: $lastName)
+                        .font(.system(size: 14))
+                        .padding(12)
+                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
+                }
+                
                 TextField("Email address", text: $email)
                     .font(.system(size: 14))
                     .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black).opacity(0.7), lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
                 
                 SecureField("Password", text: $password)
                     .font(.system(size: 14))
                     .padding(12)
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color(.black).opacity(0.7), lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
+                
+                SecureField("Confirm Password", text: $confirmPassword)
+                    .font(.system(size: 14))
+                    .padding(12)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
+                
+                HStack {
+                    TextField("+1", text: $areaCode.text)
+                        .keyboardType(.numberPad)
+                        .font(.system(size: 14))
+                        .padding(12)
+                        .frame(width: 45)
+                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
+                    
+                    TextFieldContainer("Phone Number", text: $phoneNumber, keyboardType: .numberPad, limit: 10)
+                        .font(.system(size: 14))
+                        .padding(12)
+                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(Color("bgl"), lineWidth: 1))
+                }
+                
             }.padding(.vertical, 64)
             
             Button(action: signUp) {
@@ -130,16 +191,18 @@ struct SignUpView: View {
                 Alert(title: Text("Error"), message: Text(error))
             }
             
-            
             Spacer()
-        }.padding(.horizontal, 32)
+        }
+        .offset(y: -keyboardResponder.currentHeight * 0.9)
+        .padding(.horizontal, 32)
     }
 }
 
 struct AuthView: View {
     var body: some View {
         NavigationView {
-            SignInView()
+//            SignInView()
+            SignUpView()
         }
     }
 }
@@ -147,5 +210,6 @@ struct AuthView: View {
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
         AuthView().environmentObject(SessionStore())
+//            .environment(\.colorScheme, .dark)
     }
 }
