@@ -72,22 +72,6 @@ struct ClockInView: View {
     }
 }
 
-fileprivate struct MapButton: ViewModifier {
-    
-    let backgroundColor: Color
-    var fontColor: Color = Color(UIColor.systemBackground)
-    
-    func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(self.backgroundColor.opacity(0.9))
-            .foregroundColor(self.fontColor)
-            .font(.title)
-            .clipShape(Circle())
-    }
-    
-}
-
 struct ClockInView_Previews: PreviewProvider {
     static var previews: some View {
         ClockInView().environmentObject(TimerManager()).environmentObject(LocationManager())
