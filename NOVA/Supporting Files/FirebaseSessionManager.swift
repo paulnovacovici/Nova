@@ -17,7 +17,12 @@ class SessionStore: ObservableObject {
     var handle: AuthStateDidChangeListenerHandle?
     
     func listen() {
-//        Auth.auth().currentUser
+        // Persist state to avoid showing login screen brefiely while
+        // connecting to firebase server
+        if let currentUser = Auth.auth().currentUser {
+            self.session = User(uid: currentUser.uid, email: currentUser.email)
+        }
+        
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 self.session = User(uid: user.uid, email: user.email)
