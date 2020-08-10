@@ -7,19 +7,38 @@
 //
 
 import SwiftUI
+import MapKit.MKUserLocation
 
 struct ClockInView: View {
     @EnvironmentObject var locationManager : LocationManager
     @State var alert = false
     @State var showSheet = false
+    @State var trackingMode: MKUserTrackingMode = .none
     
     var body: some View {
         NavigationView {
-            MainMapView()
-                .edgesIgnoringSafeArea(.all)
-                .alert(isPresented: $alert) {
-                    Alert(title: Text("Please enable location access in settings panel."))
+            ZStack(alignment: .trailing) {
+                MainMapView(userTrackingMode: $trackingMode)
+                    .edgesIgnoringSafeArea(.all)
+                    .alert(isPresented: $alert) {
+                        Alert(title: Text("Please enable location access in settings panel."))
+                    }
+                VStack {
+                    Spacer()
+                    Button(action: {self.trackingMode = .follow}) {
+                        Image(systemName: "location.fill")
+                            .resizable()
+                            .frame(width: 20.0, height: 20.0)
+                            .foregroundColor(.blue)
+                            .padding()
+                            .background(Color(.white))
+                            .clipShape(Circle())
+                    }
+                    
                 }
+                .padding()
+                .padding(.bottom, 20)
+            }
             .navigationBarItems(
                 leading: TimerView().environmentObject(locationManager),
                 trailing: clockInButton)
@@ -51,6 +70,22 @@ struct ClockInView: View {
             .cornerRadius(10)
             .opacity(0.9)
     }
+}
+
+fileprivate struct MapButton: ViewModifier {
+    
+    let backgroundColor: Color
+    var fontColor: Color = Color(UIColor.systemBackground)
+    
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(self.backgroundColor.opacity(0.9))
+            .foregroundColor(self.fontColor)
+            .font(.title)
+            .clipShape(Circle())
+    }
+    
 }
 
 struct ClockInView_Previews: PreviewProvider {

@@ -11,14 +11,11 @@ import MapKit
 import Combine
 
 class LocationManager: NSObject, ObservableObject {
-//    static let shared = LocationManager()
-    
     @Published var status: CLAuthorizationStatus?
     @Published var seconds = 0
     @Published var mode: TrackingMode = .stopped
     
-    var manager = CLLocationManager()
-    var delegate: MKMapView?
+    var locationManager = CLLocationManager()
     var locationList : [CLLocation] = []
     var distance = Measurement(value: 0, unit: UnitLength.meters)
     var timer = Timer()
@@ -31,9 +28,9 @@ class LocationManager: NSObject, ObservableObject {
     override init() {
         super.init()
         
-        manager.delegate = self
-        manager.distanceFilter = 10
-        manager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.distanceFilter = 10
+        locationManager.requestWhenInUseAuthorization()
     }
     
     func reset() {
@@ -56,13 +53,13 @@ class LocationManager: NSObject, ObservableObject {
           self.seconds += 1
         }
         // TODO: need to test what happens when start is called and status is denied
-        manager.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
     }
     
     func stop() {
         mode = .stopped
         timer.invalidate()
-        manager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
 }
 
@@ -71,8 +68,11 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         self.status = status
         
-        if status == .authorizedWhenInUse {
-            delegate?.userTrackingMode = .follow
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        default:
+            return
         }
     }
     
