@@ -10,12 +10,14 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 import Combine
+import FirebaseFirestore
 
 class SessionStore: ObservableObject {
     @Published var session: User?
     var handle: AuthStateDidChangeListenerHandle?
     
     func listen() {
+//        Auth.auth().currentUser
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 self.session = User(uid: user.uid, email: user.email)
@@ -25,8 +27,37 @@ class SessionStore: ObservableObject {
         })
     }
     
-    func signUp(email: String, password: String, handler: @escaping AuthDataResultCallback) {
-        Auth.auth().createUser(withEmail: email, password: password, completion: handler)
+    
+    /// Sign Up user and create a firebase account for them.
+    /// - Parameters:
+    ///   - email: email of user
+    ///   - password: password of user
+    ///   - handler: handles errors and is called if an error is passed back from firebase
+    /// - Returns: void
+    func signUp(email: String, password: String, firstName: String, lastName: String, phoneNumber: String, handler: @escaping (String) -> ()) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            if let err = err {
+                 handler(err.localizedDescription)
+                 return
+            }
+            
+            let db = Firestore.firestore()
+            
+            let userData = [
+                "first_name": firstName,
+                "last_name": lastName,
+                "phone_number": phoneNumber,
+                "email": email,
+                "uid": result!.user.uid
+            ]
+            
+            db.collection(FirebaseKeys.CollectionPath.users).addDocument(data: userData) { (err) in
+                if let error = err {
+                    // TODO: Retry adding user meta data because user account was created
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     func signIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
@@ -61,5 +92,13 @@ struct User {
     init(uid: String, email: String?) {
         self.uid = uid
         self.email = email
+    }
+}
+
+
+struct FirebaseKeys {
+    
+    struct CollectionPath {
+        static let users = "users"
     }
 }
