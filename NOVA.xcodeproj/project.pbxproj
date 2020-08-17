@@ -12,6 +12,36 @@
 		33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDD24CE861E0066DFD2 /* RouteView.swift */; };
 		33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDF24CE94A80066DFD2 /* RouteMapView.swift */; };
 		33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */; };
+		338C0DA624E9DAD300626260 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C0DA524E9DAD300626260 /* LoadingView.swift */; };
+		338C0DAA24E9ED6B00626260 /* StoreCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A224C65E3200585999 /* StoreCheckIn.swift */; };
+		338C0DAB24E9ED6B00626260 /* TPImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */; };
+		338C0DAC24E9ED6B00626260 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DD924CC94920066DFD2 /* LocationManager.swift */; };
+		338C0DAD24E9ED6B00626260 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDD24CE861E0066DFD2 /* RouteView.swift */; };
+		338C0DAE24E9ED6B00626260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986772499BAB10047618B /* AppDelegate.swift */; };
+		338C0DAF24E9ED6B00626260 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C0DA524E9DAD300626260 /* LoadingView.swift */; };
+		338C0DB024E9ED6B00626260 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */; };
+		338C0DB124E9ED6B00626260 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2EA24E0D4BD002632A7 /* KeyboardGuardian.swift */; };
+		338C0DB224E9ED6B00626260 /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919B24C5246200585999 /* ClockInView.swift */; };
+		338C0DB324E9ED6B00626260 /* FirebaseSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */; };
+		338C0DB424E9ED6B00626260 /* UIKitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */; };
+		338C0DB524E9ED6B00626260 /* TextFieldContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E424DBC940002632A7 /* TextFieldContainerView.swift */; };
+		338C0DB624E9ED6B00626260 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919D24C52D9A00585999 /* TimerView.swift */; };
+		338C0DB724E9ED6B00626260 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919724C5107900585999 /* HistoryView.swift */; };
+		338C0DB824E9ED6B00626260 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */; };
+		338C0DB924E9ED6B00626260 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A924C6A6FF00585999 /* MainMapView.swift */; };
+		338C0DBA24E9ED6B00626260 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A024C65DBA00585999 /* Data.swift */; };
+		338C0DBB24E9ED6B00626260 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E024D74E2B002632A7 /* AuthView.swift */; };
+		338C0DBC24E9ED6B00626260 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */; };
+		338C0DBD24E9ED6B00626260 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919924C5196E00585999 /* TimerManager.swift */; };
+		338C0DBE24E9ED6B00626260 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDF24CE94A80066DFD2 /* RouteMapView.swift */; };
+		338C0DBF24E9ED6B00626260 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D986792499BAB10047618B /* SceneDelegate.swift */; };
+		338C0DC024E9ED6B00626260 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D9867B2499BAB10047618B /* ContentView.swift */; };
+		338C0DC124E9ED6B00626260 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E224D77183002632A7 /* SettingsView.swift */; };
+		338C0DC524E9ED6B00626260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D986822499BAB50047618B /* LaunchScreen.storyboard */; };
+		338C0DC624E9ED6B00626260 /* mockCheckInData.json in Resources */ = {isa = PBXBuildFile; fileRef = 339B91A724C65FFB00585999 /* mockCheckInData.json */; };
+		338C0DC724E9ED6B00626260 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33EDA2DC24D74569002632A7 /* GoogleService-Info.plist */; };
+		338C0DC824E9ED6B00626260 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D986802499BAB40047618B /* Preview Assets.xcassets */; };
+		338C0DC924E9ED6B00626260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D9867D2499BAB40047618B /* Assets.xcassets */; };
 		339B919824C5107900585999 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919724C5107900585999 /* HistoryView.swift */; };
 		339B919A24C5196E00585999 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919924C5196E00585999 /* TimerManager.swift */; };
 		339B919C24C5246200585999 /* ClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B919B24C5246200585999 /* ClockInView.swift */; };
@@ -35,17 +65,20 @@
 		33EDA2E724DBD0E2002632A7 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */; };
 		33EDA2EB24E0D4BD002632A7 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EDA2EA24E0D4BD002632A7 /* KeyboardGuardian.swift */; };
 		33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */; };
-		33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */; };
-		33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */; };
-		BECB8C59DF7C16E6917ECF25 /* Pods_NOVA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481CE30D5F2B61DD2290CECA /* Pods_NOVA.framework */; };
+		5185FCE9DAF7139D1330D877 /* Pods_NOVA_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F324A111D61D4562FF20FA9 /* Pods_NOVA_Dev.framework */; };
+		93E4CC05CE1D0D21DF8AB010 /* Pods_NOVA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A0D230BFBE79EA90D8BF6E /* Pods_NOVA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F8DF5F79FF19683E1CE706C /* Pods-NOVA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA.release.xcconfig"; path = "Target Support Files/Pods-NOVA/Pods-NOVA.release.xcconfig"; sourceTree = "<group>"; };
 		33075DD924CC94920066DFD2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTabView.swift; sourceTree = "<group>"; };
 		33075DDD24CE861E0066DFD2 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		33075DDF24CE94A80066DFD2 /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
 		33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulticolorPolyline.swift; path = NOVA/Views/MulticolorPolyline.swift; sourceTree = SOURCE_ROOT; };
+		338C0DA524E9DAD300626260 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		338C0DCE24E9ED6B00626260 /* NOVA Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOVA Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		338C0DCF24E9ED6D00626260 /* Dev-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-info.plist"; sourceTree = SOURCE_ROOT; };
 		339B919724C5107900585999 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		339B919924C5196E00585999 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		339B919B24C5246200585999 /* ClockInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
@@ -71,19 +104,27 @@
 		33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardResponder.swift; path = NOVA/Views/KeyboardResponder.swift; sourceTree = SOURCE_ROOT; };
 		33EDA2EA24E0D4BD002632A7 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = SOURCE_ROOT; };
 		33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
-		33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
-		425E1A9731EC1EB76A746C61 /* Pods-NOVA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA.debug.xcconfig"; path = "Target Support Files/Pods-NOVA/Pods-NOVA.debug.xcconfig"; sourceTree = "<group>"; };
-		481CE30D5F2B61DD2290CECA /* Pods_NOVA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOVA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B91049ACC71115EF1D114B5F /* Pods-NOVA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA.release.xcconfig"; path = "Target Support Files/Pods-NOVA/Pods-NOVA.release.xcconfig"; sourceTree = "<group>"; };
+		5F44B944B48C23198A329809 /* Pods-NOVA Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA Dev.debug.xcconfig"; path = "Target Support Files/Pods-NOVA Dev/Pods-NOVA Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		6F324A111D61D4562FF20FA9 /* Pods_NOVA_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOVA_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A0D230BFBE79EA90D8BF6E /* Pods_NOVA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOVA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D4AC160CFCBCC46D5AC045 /* Pods-NOVA Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA Dev.release.xcconfig"; path = "Target Support Files/Pods-NOVA Dev/Pods-NOVA Dev.release.xcconfig"; sourceTree = "<group>"; };
+		D5DBD3C28B06B4D13B9E6597 /* Pods-NOVA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA.debug.xcconfig"; path = "Target Support Files/Pods-NOVA/Pods-NOVA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		338C0DC224E9ED6B00626260 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5185FCE9DAF7139D1330D877 /* Pods_NOVA_Dev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33D986712499BAB10047618B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BECB8C59DF7C16E6917ECF25 /* Pods_NOVA.framework in Frameworks */,
+				93E4CC05CE1D0D21DF8AB010 /* Pods_NOVA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,20 +134,15 @@
 		33075DD724CC94220066DFD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				33EDA2E424DBC940002632A7 /* TextFieldContainerView.swift */,
 				33D9867B2499BAB10047618B /* ContentView.swift */,
-				33F7AC4224BE88AE00EF9E51 /* MultiImagePicker.swift */,
-				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
 				33EDA2E224D77183002632A7 /* SettingsView.swift */,
 				33EDA2E024D74E2B002632A7 /* AuthView.swift */,
 				339B919D24C52D9A00585999 /* TimerView.swift */,
 				339B919B24C5246200585999 /* ClockInView.swift */,
 				33075DDD24CE861E0066DFD2 /* RouteView.swift */,
-				339B91A924C6A6FF00585999 /* MainMapView.swift */,
-				33075DDF24CE94A80066DFD2 /* RouteMapView.swift */,
 				339B919724C5107900585999 /* HistoryView.swift */,
 				33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */,
-				33F7AC1E24BBE58800EF9E51 /* ImagePickerView.swift */,
+				338C0DA524E9DAD300626260 /* LoadingView.swift */,
 				33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */,
 			);
 			path = Views;
@@ -142,13 +178,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		33AC03F424E4EE16005265E3 /* View Representables */ = {
+			isa = PBXGroup;
+			children = (
+				33EDA2E424DBC940002632A7 /* TextFieldContainerView.swift */,
+				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
+				339B91A924C6A6FF00585999 /* MainMapView.swift */,
+				33075DDF24CE94A80066DFD2 /* RouteMapView.swift */,
+			);
+			path = "View Representables";
+			sourceTree = "<group>";
+		};
 		33D9866B2499BAB10047618B = {
 			isa = PBXGroup;
 			children = (
 				33D986762499BAB10047618B /* NOVA */,
 				33D986752499BAB10047618B /* Products */,
 				F5B00E082661FB86FAF5F35F /* Pods */,
-				64FA6F63BB8D1D042C9295E9 /* Frameworks */,
+				68911BEE92476388B3548F52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				33D986742499BAB10047618B /* NOVA.app */,
+				338C0DCE24E9ED6B00626260 /* NOVA Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +211,7 @@
 		33D986762499BAB10047618B /* NOVA */ = {
 			isa = PBXGroup;
 			children = (
+				33AC03F424E4EE16005265E3 /* View Representables */,
 				33075DD824CC944C0066DFD2 /* Supporting Files */,
 				33075DD724CC94220066DFD2 /* Views */,
 				339B91A424C65FA900585999 /* Resources */,
@@ -172,6 +221,7 @@
 				33D9867D2499BAB40047618B /* Assets.xcassets */,
 				33D986822499BAB50047618B /* LaunchScreen.storyboard */,
 				33D986852499BAB50047618B /* Info.plist */,
+				338C0DCF24E9ED6D00626260 /* Dev-info.plist */,
 				33EDA2DC24D74569002632A7 /* GoogleService-Info.plist */,
 				33D9867F2499BAB40047618B /* Preview Content */,
 			);
@@ -186,10 +236,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		64FA6F63BB8D1D042C9295E9 /* Frameworks */ = {
+		68911BEE92476388B3548F52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				481CE30D5F2B61DD2290CECA /* Pods_NOVA.framework */,
+				74A0D230BFBE79EA90D8BF6E /* Pods_NOVA.framework */,
+				6F324A111D61D4562FF20FA9 /* Pods_NOVA_Dev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,8 +248,10 @@
 		F5B00E082661FB86FAF5F35F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				425E1A9731EC1EB76A746C61 /* Pods-NOVA.debug.xcconfig */,
-				B91049ACC71115EF1D114B5F /* Pods-NOVA.release.xcconfig */,
+				D5DBD3C28B06B4D13B9E6597 /* Pods-NOVA.debug.xcconfig */,
+				2F8DF5F79FF19683E1CE706C /* Pods-NOVA.release.xcconfig */,
+				5F44B944B48C23198A329809 /* Pods-NOVA Dev.debug.xcconfig */,
+				B7D4AC160CFCBCC46D5AC045 /* Pods-NOVA Dev.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -206,15 +259,34 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		338C0DA724E9ED6B00626260 /* NOVA Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 338C0DCB24E9ED6B00626260 /* Build configuration list for PBXNativeTarget "NOVA Dev" */;
+			buildPhases = (
+				508DCA17C60885A0CBDF97E8 /* [CP] Check Pods Manifest.lock */,
+				338C0DA924E9ED6B00626260 /* Sources */,
+				338C0DC224E9ED6B00626260 /* Frameworks */,
+				338C0DC424E9ED6B00626260 /* Resources */,
+				90B5E91FB411E3E5273C2F92 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NOVA Dev";
+			productName = NOVA;
+			productReference = 338C0DCE24E9ED6B00626260 /* NOVA Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		33D986732499BAB10047618B /* NOVA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33D986882499BAB50047618B /* Build configuration list for PBXNativeTarget "NOVA" */;
 			buildPhases = (
-				D6D3AEDF5B1AB80E573A28DE /* [CP] Check Pods Manifest.lock */,
+				EEDD8FB7FE483806E5A41AAF /* [CP] Check Pods Manifest.lock */,
 				33D986702499BAB10047618B /* Sources */,
 				33D986712499BAB10047618B /* Frameworks */,
 				33D986722499BAB10047618B /* Resources */,
-				EF358590C0D1CC1E8A9AD9BF /* [CP] Embed Pods Frameworks */,
+				E0446E81B989B46C34A4AF30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,11 +326,24 @@
 			projectRoot = "";
 			targets = (
 				33D986732499BAB10047618B /* NOVA */,
+				338C0DA724E9ED6B00626260 /* NOVA Dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		338C0DC424E9ED6B00626260 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				338C0DC524E9ED6B00626260 /* LaunchScreen.storyboard in Resources */,
+				338C0DC624E9ED6B00626260 /* mockCheckInData.json in Resources */,
+				338C0DC724E9ED6B00626260 /* GoogleService-Info.plist in Resources */,
+				338C0DC824E9ED6B00626260 /* Preview Assets.xcassets in Resources */,
+				338C0DC924E9ED6B00626260 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33D986722499BAB10047618B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,7 +359,63 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D6D3AEDF5B1AB80E573A28DE /* [CP] Check Pods Manifest.lock */ = {
+		508DCA17C60885A0CBDF97E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NOVA Dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90B5E91FB411E3E5273C2F92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOVA Dev/Pods-NOVA Dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOVA Dev/Pods-NOVA Dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOVA Dev/Pods-NOVA Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0446E81B989B46C34A4AF30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEDD8FB7FE483806E5A41AAF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,26 +437,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF358590C0D1CC1E8A9AD9BF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOVA/Pods-NOVA-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		338C0DA924E9ED6B00626260 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				338C0DAA24E9ED6B00626260 /* StoreCheckIn.swift in Sources */,
+				338C0DAB24E9ED6B00626260 /* TPImagePicker.swift in Sources */,
+				338C0DAC24E9ED6B00626260 /* LocationManager.swift in Sources */,
+				338C0DAD24E9ED6B00626260 /* RouteView.swift in Sources */,
+				338C0DAE24E9ED6B00626260 /* AppDelegate.swift in Sources */,
+				338C0DAF24E9ED6B00626260 /* LoadingView.swift in Sources */,
+				338C0DB024E9ED6B00626260 /* KeyboardResponder.swift in Sources */,
+				338C0DB124E9ED6B00626260 /* KeyboardGuardian.swift in Sources */,
+				338C0DB224E9ED6B00626260 /* ClockInView.swift in Sources */,
+				338C0DB324E9ED6B00626260 /* FirebaseSessionManager.swift in Sources */,
+				338C0DB424E9ED6B00626260 /* UIKitTabView.swift in Sources */,
+				338C0DB524E9ED6B00626260 /* TextFieldContainerView.swift in Sources */,
+				338C0DB624E9ED6B00626260 /* TimerView.swift in Sources */,
+				338C0DB724E9ED6B00626260 /* HistoryView.swift in Sources */,
+				338C0DB824E9ED6B00626260 /* CheckInView.swift in Sources */,
+				338C0DB924E9ED6B00626260 /* MainMapView.swift in Sources */,
+				338C0DBA24E9ED6B00626260 /* Data.swift in Sources */,
+				338C0DBB24E9ED6B00626260 /* AuthView.swift in Sources */,
+				338C0DBC24E9ED6B00626260 /* MulticolorPolyline.swift in Sources */,
+				338C0DBD24E9ED6B00626260 /* TimerManager.swift in Sources */,
+				338C0DBE24E9ED6B00626260 /* RouteMapView.swift in Sources */,
+				338C0DBF24E9ED6B00626260 /* SceneDelegate.swift in Sources */,
+				338C0DC024E9ED6B00626260 /* ContentView.swift in Sources */,
+				338C0DC124E9ED6B00626260 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33D986702499BAB10047618B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +480,7 @@
 				33075DDA24CC94920066DFD2 /* LocationManager.swift in Sources */,
 				33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
+				338C0DA624E9DAD300626260 /* LoadingView.swift in Sources */,
 				33EDA2E724DBD0E2002632A7 /* KeyboardResponder.swift in Sources */,
 				33EDA2EB24E0D4BD002632A7 /* KeyboardGuardian.swift in Sources */,
 				339B919C24C5246200585999 /* ClockInView.swift in Sources */,
@@ -335,11 +491,9 @@
 				339B919824C5107900585999 /* HistoryView.swift in Sources */,
 				33F7AC1D24BA7F2B00EF9E51 /* CheckInView.swift in Sources */,
 				339B91AA24C6A6FF00585999 /* MainMapView.swift in Sources */,
-				33F7AC1F24BBE58800EF9E51 /* ImagePickerView.swift in Sources */,
 				339B91A124C65DBA00585999 /* Data.swift in Sources */,
 				33EDA2E124D74E2B002632A7 /* AuthView.swift in Sources */,
 				33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */,
-				33F7AC4324BE88AE00EF9E51 /* MultiImagePicker.swift in Sources */,
 				339B919A24C5196E00585999 /* TimerManager.swift in Sources */,
 				33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */,
 				33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */,
@@ -362,6 +516,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		338C0DCC24E9ED6B00626260 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F44B944B48C23198A329809 /* Pods-NOVA Dev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NOVA/Preview Content\"";
+				DEVELOPMENT_TEAM = X2XN2M82X8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Dev-info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = nova.novacovici.NOVA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		338C0DCD24E9ED6B00626260 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7D4AC160CFCBCC46D5AC045 /* Pods-NOVA Dev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"NOVA/Preview Content\"";
+				DEVELOPMENT_TEAM = X2XN2M82X8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Dev-info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = nova.novacovici.NOVA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		33D986862499BAB50047618B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,7 +676,7 @@
 		};
 		33D986892499BAB50047618B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 425E1A9731EC1EB76A746C61 /* Pods-NOVA.debug.xcconfig */;
+			baseConfigurationReference = D5DBD3C28B06B4D13B9E6597 /* Pods-NOVA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,7 +697,7 @@
 		};
 		33D9868A2499BAB50047618B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B91049ACC71115EF1D114B5F /* Pods-NOVA.release.xcconfig */;
+			baseConfigurationReference = 2F8DF5F79FF19683E1CE706C /* Pods-NOVA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +719,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		338C0DCB24E9ED6B00626260 /* Build configuration list for PBXNativeTarget "NOVA Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				338C0DCC24E9ED6B00626260 /* Debug */,
+				338C0DCD24E9ED6B00626260 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		33D9866F2499BAB10047618B /* Build configuration list for PBXProject "NOVA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

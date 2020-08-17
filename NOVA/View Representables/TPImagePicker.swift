@@ -12,6 +12,7 @@ import ImagePicker
 
 struct TPImagePicker: UIViewControllerRepresentable {
     @Binding var images: [UIImage]
+    var imageLimit: Int = 5
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(parent: self)
@@ -21,7 +22,7 @@ struct TPImagePicker: UIViewControllerRepresentable {
         
         let imagePickerController = ImagePickerController()
         imagePickerController.delegate = context.coordinator
-        imagePickerController.imageLimit = 10
+        imagePickerController.imageLimit = imageLimit
         
         return imagePickerController
     }

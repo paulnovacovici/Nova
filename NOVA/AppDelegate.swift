@@ -9,14 +9,27 @@
 import UIKit
 import Firebase
 
+enum Environment: String {
+    case dev
+    case prod
+    case none
+}
+
+var environment: Environment = .none
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        #if DEVELOPMENT
+        environment = .dev
+        #else
+        environment = .prod
+        #endif
+                
         return true
     }
 

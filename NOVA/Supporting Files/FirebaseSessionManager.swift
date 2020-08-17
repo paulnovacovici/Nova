@@ -45,9 +45,7 @@ class SessionStore: ObservableObject {
                  handler(err.localizedDescription)
                  return
             }
-            
-            let db = Firestore.firestore()
-            
+                        
             let userData = [
                 "first_name": firstName,
                 "last_name": lastName,
@@ -56,7 +54,7 @@ class SessionStore: ObservableObject {
                 "uid": result!.user.uid
             ]
             
-            db.collection(FirebaseKeys.CollectionPath.users).addDocument(data: userData) { (err) in
+            FirestoreReferenceManager.root.collection(FirebaseKeys.CollectionPath.users).document(result!.user.uid).setData(userData) { (err) in
                 if let error = err {
                     // TODO: Retry adding user meta data because user account was created
                     print(error.localizedDescription)
@@ -105,5 +103,12 @@ struct FirebaseKeys {
     
     struct CollectionPath {
         static let users = "users"
+        static let checkIns = "check-in"
+        static let images = "images"
     }
+}
+
+struct FirestoreReferenceManager {
+    static let db = Firestore.firestore()
+    static let root = db.collection(environment.rawValue).document(environment.rawValue)
 }

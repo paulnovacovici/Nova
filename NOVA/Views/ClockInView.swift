@@ -34,7 +34,6 @@ struct ClockInView: View {
                             .background(Color(.white))
                             .clipShape(Circle())
                     }
-                    
                 }
                 .padding()
                 .padding(.bottom, 20)

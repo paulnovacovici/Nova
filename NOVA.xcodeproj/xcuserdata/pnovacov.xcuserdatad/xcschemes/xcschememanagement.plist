@@ -4,10 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>NOVA Dev.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
 		<key>NOVA.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>24</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>338C0DA724E9ED6B00626260</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33D986732499BAB10047618B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
