@@ -1,0 +1,6 @@
+framework module Pods_NOVA {
+  umbrella header "Pods-NOVA-umbrella.h"
+
+  export *
+  module * { export * }
+}
