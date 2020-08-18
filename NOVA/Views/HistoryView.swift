@@ -27,7 +27,7 @@ struct HistoryView: View {
                     // TODO: See if same logic is doable with List or Divider
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
-                            ForEach(self.data, id: \.self) { checkIn in
+                            ForEach(self.data) { checkIn in
                                 ZStack {
                                     if checkIn.isShimmer {
                                         HistoryRowShimmer(show: checkIn.show)
@@ -36,7 +36,7 @@ struct HistoryView: View {
                                         // Show Data
                                         ZStack {
                                             // Check to see if last element is in view
-                                            if self.data.last?.hashValue == checkIn.hashValue {
+                                            if self.data.last?.id == checkIn.id {
                                                 GeometryReader { g in
                                                     HistoryRow(storeName: checkIn.store, arrivalTime: checkIn.arrivalTime)
                                                         .onAppear {
@@ -89,7 +89,7 @@ struct HistoryView: View {
     func loadData() {
         let dbRef = FirestoreReferenceManager.root.collection(FirebaseKeys.CollectionPath.checkIns)
         
-        dbRef.order(by: StoreCheckIn.CodingKeys.arrivalTime.rawValue).limit(to: 20).getDocuments { (snap, err) in
+        dbRef.whereField("userId", isEqualTo: Auth.auth().currentUser!.uid).order(by: StoreCheckIn.CodingKeys.arrivalTime.rawValue, descending: true).limit(to: 20).getDocuments { (snap, err) in
             if let err = err {
                 // TODO: show error
                 print(err.localizedDescription)
