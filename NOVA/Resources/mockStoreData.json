@@ -1,0 +1,34 @@
+[
+    {
+        "id": 0,
+        "name": "Woodmans",
+        "address": "1550 Deerfield Pkwy",
+        "city": "Buffalo Grove",
+        "state": "IL",
+        "zipCode": "60089"
+    },
+    {
+        "id": 1,
+        "name": "Target",
+        "address": "2341 Randall Rd",
+        "city": "Elgin",
+        "state": "IL",
+        "zipCode": "60136"
+    },
+    {
+        "id": 2,
+        "name": "Target",
+        "address": "932 Michigan Ave",
+        "city": "Chicago",
+        "state": "IL",
+        "zipCode": "60234"
+    },
+    {
+        "id": 3,
+        "name": "Wallmart",
+        "address": "2341 Bower Rd",
+        "city": "Saint Charles",
+        "state": "IL",
+        "zipCode": "60234"
+    }
+]

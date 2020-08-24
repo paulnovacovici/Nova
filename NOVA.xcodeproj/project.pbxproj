@@ -12,6 +12,14 @@
 		33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDD24CE861E0066DFD2 /* RouteView.swift */; };
 		33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DDF24CE94A80066DFD2 /* RouteMapView.swift */; };
 		33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */; };
+		3323CC6124F338AF00CF93F7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3323CC6024F338AF00CF93F7 /* Store.swift */; };
+		3323CC6324F339E400CF93F7 /* mockStoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3323CC6224F339E400CF93F7 /* mockStoreData.json */; };
+		3323CC6424F339E400CF93F7 /* mockStoreData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3323CC6224F339E400CF93F7 /* mockStoreData.json */; };
+		3323CC6524F339E800CF93F7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3323CC6024F338AF00CF93F7 /* Store.swift */; };
+		3323CC6724F34F0700CF93F7 /* mockBrandData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3323CC6624F34F0700CF93F7 /* mockBrandData.json */; };
+		3323CC6824F34F0700CF93F7 /* mockBrandData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3323CC6624F34F0700CF93F7 /* mockBrandData.json */; };
+		3323CC6A24F34F7E00CF93F7 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3323CC6924F34F7E00CF93F7 /* Brand.swift */; };
+		3323CC6B24F34F7E00CF93F7 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3323CC6924F34F7E00CF93F7 /* Brand.swift */; };
 		338C0DA624E9DAD300626260 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C0DA524E9DAD300626260 /* LoadingView.swift */; };
 		338C0DAA24E9ED6B00626260 /* StoreCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B91A224C65E3200585999 /* StoreCheckIn.swift */; };
 		338C0DAB24E9ED6B00626260 /* TPImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */; };
@@ -76,6 +84,10 @@
 		33075DDD24CE861E0066DFD2 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		33075DDF24CE94A80066DFD2 /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
 		33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulticolorPolyline.swift; path = NOVA/Views/MulticolorPolyline.swift; sourceTree = SOURCE_ROOT; };
+		3323CC6024F338AF00CF93F7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		3323CC6224F339E400CF93F7 /* mockStoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockStoreData.json; sourceTree = "<group>"; };
+		3323CC6624F34F0700CF93F7 /* mockBrandData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockBrandData.json; sourceTree = "<group>"; };
+		3323CC6924F34F7E00CF93F7 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		338C0DA524E9DAD300626260 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		338C0DCE24E9ED6B00626260 /* NOVA Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOVA Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		338C0DCF24E9ED6D00626260 /* Dev-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-info.plist"; sourceTree = SOURCE_ROOT; };
@@ -166,6 +178,8 @@
 			children = (
 				339B91A024C65DBA00585999 /* Data.swift */,
 				339B91A224C65E3200585999 /* StoreCheckIn.swift */,
+				3323CC6024F338AF00CF93F7 /* Store.swift */,
+				3323CC6924F34F7E00CF93F7 /* Brand.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -174,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				339B91A724C65FFB00585999 /* mockCheckInData.json */,
+				3323CC6224F339E400CF93F7 /* mockStoreData.json */,
+				3323CC6624F34F0700CF93F7 /* mockBrandData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -339,6 +355,8 @@
 				338C0DC524E9ED6B00626260 /* LaunchScreen.storyboard in Resources */,
 				338C0DC624E9ED6B00626260 /* mockCheckInData.json in Resources */,
 				338C0DC724E9ED6B00626260 /* GoogleService-Info.plist in Resources */,
+				3323CC6824F34F0700CF93F7 /* mockBrandData.json in Resources */,
+				3323CC6424F339E400CF93F7 /* mockStoreData.json in Resources */,
 				338C0DC824E9ED6B00626260 /* Preview Assets.xcassets in Resources */,
 				338C0DC924E9ED6B00626260 /* Assets.xcassets in Resources */,
 			);
@@ -351,6 +369,8 @@
 				33D986842499BAB50047618B /* LaunchScreen.storyboard in Resources */,
 				339B91A824C65FFB00585999 /* mockCheckInData.json in Resources */,
 				33EDA2DD24D74569002632A7 /* GoogleService-Info.plist in Resources */,
+				3323CC6724F34F0700CF93F7 /* mockBrandData.json in Resources */,
+				3323CC6324F339E400CF93F7 /* mockStoreData.json in Resources */,
 				33D986812499BAB40047618B /* Preview Assets.xcassets in Resources */,
 				33D9867E2499BAB40047618B /* Assets.xcassets in Resources */,
 			);
@@ -449,6 +469,7 @@
 				338C0DAC24E9ED6B00626260 /* LocationManager.swift in Sources */,
 				338C0DAD24E9ED6B00626260 /* RouteView.swift in Sources */,
 				338C0DAE24E9ED6B00626260 /* AppDelegate.swift in Sources */,
+				3323CC6524F339E800CF93F7 /* Store.swift in Sources */,
 				338C0DAF24E9ED6B00626260 /* LoadingView.swift in Sources */,
 				338C0DB024E9ED6B00626260 /* KeyboardResponder.swift in Sources */,
 				338C0DB124E9ED6B00626260 /* KeyboardGuardian.swift in Sources */,
@@ -464,6 +485,7 @@
 				338C0DBB24E9ED6B00626260 /* AuthView.swift in Sources */,
 				338C0DBC24E9ED6B00626260 /* MulticolorPolyline.swift in Sources */,
 				338C0DBD24E9ED6B00626260 /* TimerManager.swift in Sources */,
+				3323CC6B24F34F7E00CF93F7 /* Brand.swift in Sources */,
 				338C0DBE24E9ED6B00626260 /* RouteMapView.swift in Sources */,
 				338C0DBF24E9ED6B00626260 /* SceneDelegate.swift in Sources */,
 				338C0DC024E9ED6B00626260 /* ContentView.swift in Sources */,
@@ -480,6 +502,7 @@
 				33075DDA24CC94920066DFD2 /* LocationManager.swift in Sources */,
 				33075DDE24CE861E0066DFD2 /* RouteView.swift in Sources */,
 				33D986782499BAB10047618B /* AppDelegate.swift in Sources */,
+				3323CC6124F338AF00CF93F7 /* Store.swift in Sources */,
 				338C0DA624E9DAD300626260 /* LoadingView.swift in Sources */,
 				33EDA2E724DBD0E2002632A7 /* KeyboardResponder.swift in Sources */,
 				33EDA2EB24E0D4BD002632A7 /* KeyboardGuardian.swift in Sources */,
@@ -495,6 +518,7 @@
 				33EDA2E124D74E2B002632A7 /* AuthView.swift in Sources */,
 				33075DE224CE95D70066DFD2 /* MulticolorPolyline.swift in Sources */,
 				339B919A24C5196E00585999 /* TimerManager.swift in Sources */,
+				3323CC6A24F34F7E00CF93F7 /* Brand.swift in Sources */,
 				33075DE024CE94A80066DFD2 /* RouteMapView.swift in Sources */,
 				33D9867A2499BAB10047618B /* SceneDelegate.swift in Sources */,
 				33D9867C2499BAB10047618B /* ContentView.swift in Sources */,

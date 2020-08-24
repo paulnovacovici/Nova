@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "name": "Red Bull",
+        "email": "paulnovacovici@gmail.com"
+    },
+    {
+        "id": 1,
+        "name": "Icelandic",
+        "email": "paulnovacovici@gmail.com"
+    },
+    {
+        "id": 2,
+        "name": "Ice Mountain",
+        "email": "paulnovacovici@gmail.com"
+    },
+    {
+        "id": 3,
+        "name": "Bud Light",
+        "email": "paulnovacovici@gmail.com"
+    }
+]

@@ -11,6 +11,8 @@ import UIKit
 import SwiftUI
 
 let storeCheckInData: [StoreCheckIn] = load("mockCheckInData.json")
+let mockStoreData: [Store] = [Store(name: "None")] + load("mockStoreData.json")
+let mockBrandData: [Brand] = [Brand(name: "None", email: "")] + load("mockBrandData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

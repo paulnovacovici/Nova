@@ -14,16 +14,22 @@ import FirebaseFirestoreSwift
 import FirebaseAuth
 
 class StoreForm: ObservableObject {
-    @Published var store = ""
     @Published var managerIn = false
     @Published var spokeTo = ""
     @Published var shelfStocked = false
     @Published var arrivalTime = Date()
     @Published var needs = ""
     @Published var images: [UIImage] = []
+    @Published var storeIndex = 0
+    @Published var brandIndex = 0
+    
+    // TODO: Get these from firebase
+    let stores = mockStoreData
+    let brands = mockBrandData
     
     func reset() {
-        store = ""
+        storeIndex = 0
+        brandIndex = 0
         managerIn = false
         spokeTo = ""
         shelfStocked = false
@@ -32,8 +38,12 @@ class StoreForm: ObservableObject {
         images = []
     }
     
-    func imagesMetaData(imageURLs images: [String]) -> StoreCheckIn {
-        return StoreCheckIn(store: self.store, manager: self.spokeTo, arrivalTime: self.arrivalTime, needs: self.needs, shelfStocked: self.shelfStocked, images: images, userId: Auth.auth().currentUser!.uid)
+    func createStoreFormORM(imageURLs images: [String]) -> StoreCheckIn {
+        let storeName = self.stores[self.storeIndex].name
+        let address = self.stores[self.storeIndex].fullAddress ?? ""
+        let brandName = self.brands[self.brandIndex].name
+        let brandEmail = self.brands[self.brandIndex].email
+        return StoreCheckIn(store: storeName, manager: self.spokeTo, arrivalTime: self.arrivalTime, needs: self.needs, shelfStocked: self.shelfStocked, images: images, userId: Auth.auth().currentUser!.uid, address: address, brandName: brandName, brandEmail: brandEmail)
     }
     
     func submit(completion: @escaping (String?) -> ()) {
@@ -70,7 +80,7 @@ class StoreForm: ObservableObject {
                     imageURLs.append(url.absoluteString)
                     
                     if imageURLs.count == self.images.count {
-                        let data = self.imagesMetaData(imageURLs: imageURLs)
+                        let data = self.createStoreFormORM(imageURLs: imageURLs)
                         let dataRef = FirestoreReferenceManager.root.collection(FirebaseKeys.CollectionPath.checkIns).document()
                         do {
                             try dataRef.setData(from: data) { (err) in
@@ -93,7 +103,7 @@ class StoreForm: ObservableObject {
     }
     
     func canSubmit() -> Bool {
-        return store.count > 0 && images.count > 0
+        return storeIndex > 0 && images.count > 0 && brandIndex > 0
     }
 }
 
@@ -105,13 +115,34 @@ struct CheckInView: View {
     @State var isLoading = false
     @State var showAlert = false
     @State var alertText = ""
+ 
     
     var body: some View {
         NavigationView {
             ZStack {
                 Form {
                     Section {
-                        TextField("Store Name", text: $storeForm.store)
+                        Picker(selection: $storeForm.brandIndex, label: Text("Brand Name")) {
+                            ForEach(0 ..< mockBrandData.count) { i in
+                                VStack(alignment: .leading) {
+                                    Text(mockBrandData[i].name)
+                                }.tag(i)
+                            }
+                        }
+                        Picker(selection: $storeForm.storeIndex, label: Text("Store Name")) {
+                            ForEach(0 ..< mockStoreData.count) { i in
+                                VStack(alignment: .leading) {
+                                    Text(mockStoreData[i].name)
+                                    mockStoreData[i].fullAddress.map { address in
+                                        Text(address)
+                                        .font(.footnote)
+                                        .foregroundColor(.gray)
+                                        .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                                        .lineLimit(1)
+                                    }
+                                }.tag(i)
+                            }
+                        }
                         DatePicker("Arrival time", selection: $storeForm.arrivalTime)
                     }
                     

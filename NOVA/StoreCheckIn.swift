@@ -10,7 +10,6 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct StoreCheckIn: Codable, Identifiable {
-    // TODO: Add ID so we can do last doc comparison's in History
     @DocumentID var id: String?
     var store: String
     var manager: String
@@ -19,6 +18,9 @@ struct StoreCheckIn: Codable, Identifiable {
     var shelfStocked: Bool
     var images: [String]
     var userId: String
+    var address: String
+    var brandName: String
+    var brandEmail: String
     var show: Bool = false
     var isShimmer: Bool = false
     @ServerTimestamp var createdTime: Timestamp?
@@ -32,10 +34,13 @@ struct StoreCheckIn: Codable, Identifiable {
         self.images = []
         self.show = false
         self.userId = ""
+        self.address = ""
+        self.brandName = ""
+        self.brandEmail = ""
         self.isShimmer = true
     }
     
-    init(store: String, manager: String, arrivalTime: Date, needs: String, shelfStocked: Bool, images: [String], userId: String) {
+    init(store: String, manager: String, arrivalTime: Date, needs: String, shelfStocked: Bool, images: [String], userId: String, address: String, brandName: String, brandEmail: String) {
         self.store = store
         self.manager = manager
         self.arrivalTime = arrivalTime
@@ -43,6 +48,9 @@ struct StoreCheckIn: Codable, Identifiable {
         self.shelfStocked = shelfStocked
         self.images = images
         self.userId = userId
+        self.address = address
+        self.brandEmail = brandEmail
+        self.brandName = brandName
         self.show = false
         self.isShimmer = false
     }
@@ -51,6 +59,8 @@ struct StoreCheckIn: Codable, Identifiable {
         case shelfStocked = "shelf_stocked"
         case arrivalTime = "arrival_time"
         case createdTime = "created_time"
+        case brandName = "brand_name"
+        case brandEmail = "brand_email"
         
         case store
         case userId
@@ -58,5 +68,6 @@ struct StoreCheckIn: Codable, Identifiable {
         case needs
         case images
         case id
+        case address
     }
 }
