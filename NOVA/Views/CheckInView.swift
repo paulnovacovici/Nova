@@ -107,6 +107,7 @@ class StoreForm: ObservableObject {
     }
 }
 
+
 struct CheckInView: View {
     @EnvironmentObject var locationManager : LocationManager
     @EnvironmentObject var session: SessionStore

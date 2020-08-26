@@ -38,7 +38,7 @@ struct HistoryView: View {
                                             // Check to see if last element is in view
                                             if self.data.last?.id == checkIn.id {
                                                 GeometryReader { g in
-                                                    HistoryRow(storeName: checkIn.store, arrivalTime: checkIn.arrivalTime)
+                                                    HistoryRow(storeName: checkIn.store, arrivalTime: checkIn.arrivalTime, address: checkIn.address)
                                                         .onAppear {
                                                             self.timer = Timer.publish(every: 0.1, on: .main, in: .tracking).autoconnect()
                                                         }
@@ -51,7 +51,7 @@ struct HistoryView: View {
                                                     }
                                                 }.frame(height: 65 )
                                             } else {
-                                                HistoryRow(storeName: checkIn.store, arrivalTime: checkIn.arrivalTime)
+                                                HistoryRow(storeName: checkIn.store, arrivalTime: checkIn.arrivalTime, address: checkIn.address)
                                             }
                                         }
                                     }
@@ -68,7 +68,9 @@ struct HistoryView: View {
             .navigationBarTitle(Text("History"))
             .navigationBarItems(leading: TimerView().environmentObject(locationManager))
         }.onAppear {
-            self.loadShimmerData()
+            if self.data.isEmpty {
+                self.loadShimmerData()
+            }
             
             // Connect to firebase
             self.loadData()
@@ -126,6 +128,7 @@ struct HistoryView: View {
 struct HistoryRow: View {
     var storeName: String
     var arrivalTime: Date
+    var address: String
     
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
@@ -135,7 +138,14 @@ struct HistoryRow: View {
     
     var body: some View {
         HStack {
-            Text(storeName)
+            VStack(alignment: .leading) {
+                Text(storeName)
+                Text(address)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                    .lineLimit(1)
+            }
             Spacer()
             Text("\(arrivalTime, formatter: Self.taskDateFormat)")
         }
