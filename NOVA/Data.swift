@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import SwiftUI
 
-let storeCheckInData: [StoreCheckIn] = load("mockCheckInData.json")
-let mockStoreData: [Store] = [Store(name: "None")] + load("mockStoreData.json")
-let mockBrandData: [Brand] = [Brand(name: "None", email: "")] + load("mockBrandData.json")
+let storeCheckInData: [StoreCheckInDTO] = load("mockCheckInData.json")
+let mockStoreData: [StoreDTO] = [StoreDTO(name: "None")] + load("mockStoreData.json")
+let mockBrandData: [BrandDTO] = [BrandDTO(name: "None", email: "", items: [])] + load("mockBrandData.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

@@ -9,8 +9,15 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Brand: Codable, Identifiable {
+struct BrandDTO: Codable, Identifiable {
     var id: Int?
     var name: String
     var email: String
+    var items: [Item]
 }
+
+struct Item: Codable {
+    var name: String
+    var SKUs: [String]
+}
+

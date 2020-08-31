@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct StoreCheckIn: Codable, Identifiable {
+struct StoreCheckInDTO: Codable, Identifiable {
     @DocumentID var id: String?
     var store: String
     var manager: String

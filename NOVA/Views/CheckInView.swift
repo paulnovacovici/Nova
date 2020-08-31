@@ -27,6 +27,10 @@ class StoreForm: ObservableObject {
     let stores = mockStoreData
     let brands = mockBrandData
     
+    var brand: BrandDTO {
+        return brands[brandIndex]
+    }
+    
     func reset() {
         storeIndex = 0
         brandIndex = 0
@@ -38,12 +42,12 @@ class StoreForm: ObservableObject {
         images = []
     }
     
-    func createStoreFormORM(imageURLs images: [String]) -> StoreCheckIn {
+    func createStoreFormORM(imageURLs images: [String]) -> StoreCheckInDTO {
         let storeName = self.stores[self.storeIndex].name
         let address = self.stores[self.storeIndex].fullAddress ?? ""
         let brandName = self.brands[self.brandIndex].name
         let brandEmail = self.brands[self.brandIndex].email
-        return StoreCheckIn(store: storeName, manager: self.spokeTo, arrivalTime: self.arrivalTime, needs: self.needs, shelfStocked: self.shelfStocked, images: images, userId: Auth.auth().currentUser!.uid, address: address, brandName: brandName, brandEmail: brandEmail)
+        return StoreCheckInDTO(store: storeName, manager: self.spokeTo, arrivalTime: self.arrivalTime, needs: self.needs, shelfStocked: self.shelfStocked, images: images, userId: Auth.auth().currentUser!.uid, address: address, brandName: brandName, brandEmail: brandEmail)
     }
     
     func submit(completion: @escaping (String?) -> ()) {
@@ -112,10 +116,12 @@ struct CheckInView: View {
     @EnvironmentObject var locationManager : LocationManager
     @EnvironmentObject var session: SessionStore
     @ObservedObject var storeForm = StoreForm()
-    @State var show = false
+    @State var showImagePickerView = false
+    @State var showNewOrderView = false
     @State var isLoading = false
     @State var showAlert = false
     @State var alertText = ""
+    @State var orders: [OrderViewModel] = []
  
     
     var body: some View {
@@ -163,18 +169,34 @@ struct CheckInView: View {
                         TextField("Does anything need to be ordered?", text: $storeForm.needs)
                     }
                     
+                    Section(header: Text("ORDERS")) {
+                        ForEach(0 ..< orders.count, id: \.self) { i in
+                            OrderRow(order: self.orders[i])
+                        }
+                        Button(action: {
+                            self.showNewOrderView.toggle()
+                        }) {
+                            HStack {
+                                Text("Add Order")
+                                Image(systemName: "plus")
+                            }
+                        }.sheet(isPresented: $showNewOrderView) { 
+                            OrderView(brand: self.storeForm.brand, orders: self.$orders)
+                        }
+                    }
+                    
                     if !self.storeForm.images.isEmpty{
                         Section {
                             PhotoRow(photos: self.storeForm.images)
                         }.listRowInsets(EdgeInsets())
                     }
                     
-                    Section {
+                    Section(header: Text("PHOTOS")) {
                         Button(action: {
                             
                             self.storeForm.images.removeAll()
 
-                            self.show.toggle()
+                            self.showImagePickerView.toggle()
                             
                         }) {
                             HStack{
@@ -186,7 +208,7 @@ struct CheckInView: View {
                                 Image(systemName: "photo")
                             }
                         }
-                        .sheet(isPresented: $show) {
+                        .sheet(isPresented: $showImagePickerView) {
                             TPImagePicker(images: self.$storeForm.images)
                         }
                     }
@@ -201,11 +223,23 @@ struct CheckInView: View {
             }
             .navigationBarTitle("Check-in")
             .navigationBarItems(
-                leading: TimerView().environmentObject(locationManager),
-                trailing: Button(action: upload) {
-                            Text("Submit")
-                        }.disabled(!self.storeForm.canSubmit()))
+                leading: cancelButton,
+                trailing: submitButton)
         }
+    }
+    
+    var cancelButton: some View {
+        Button(action: {
+            self.storeForm.reset()
+        }) {
+            Text("Cancel")
+        }
+    }
+    
+    var submitButton: some View {
+        Button(action: upload) {
+            Text("Submit")
+        }.disabled(!self.storeForm.canSubmit())
     }
     
     func showAlertMessage(_ message: String) {
@@ -222,6 +256,25 @@ struct CheckInView: View {
             
             self.storeForm.reset()
             self.isLoading = false
+        }
+    }
+}
+
+struct OrderRow: View {
+    @ObservedObject var order: OrderViewModel
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(order.item)
+                Text(order.SKU)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                    .lineLimit(1)
+            }
+            Spacer()
+            Text("\(order.numCases) cases")
         }
     }
 }

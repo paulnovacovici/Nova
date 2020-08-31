@@ -2,21 +2,86 @@
     {
         "id": 0,
         "name": "Red Bull",
-        "email": "paulnovacovici@gmail.com"
+        "email": "paulnovacovici@gmail.com",
+        "items": [
+            {
+                "name": "Cola",
+                "SKUs": [
+                    "12 PK 750 ML BTL",
+                    "24 PK 330 ML BTL"
+                ]
+            },
+            {
+                "name": "Yellow",
+                "SKUs": [
+                    "12 PK 750 ML BTL",
+                    "24 PK 330 ML BTL"
+                ]
+            }
+        ]
     },
     {
         "id": 1,
         "name": "Icelandic",
-        "email": "paulnovacovici@gmail.com"
+        "email": "paulnovacovici@gmail.com",
+        "items": [
+            {
+                "name": "GL SPARKLING",
+                "SKUs": [
+                    "12 PK 750 ML BTL",
+                    "24 PK 330 ML BTL"
+                ]
+            },
+            {
+                "name": "PL SPARKLING",
+                "SKUs": ["24 PK 500 ML BTL"]
+            },
+            {
+                "name": "PL SPARK ELDERFLOWER",
+                "SKUs": ["24 PK 500 ML BTL"]
+            },
+            {
+                "name": "PL SPARK SICILIAN LEMON",
+                "SKUs": ["24 PK 500 ML BTL"]
+            },
+            {
+                "name": "PL STILL",
+                "SKUs": [
+                    "6 PK 1 LTR PET",
+                    "6 PK 500 ML PET",
+                    "12 PK 1 LTR PET",
+                    "12 PK 750 ML PET",
+                    "12 PK 1500 ML PET"
+                ]
+            }
+        ]
     },
     {
         "id": 2,
         "name": "Ice Mountain",
-        "email": "paulnovacovici@gmail.com"
+        "email": "paulnovacovici@gmail.com",
+        "items": [
+            {
+                "name": "MINERAL",
+                "SKUs": [
+                    "12 PK 750 ML BTL",
+                    "24 PK 330 ML BTL"
+                ]
+            }
+        ]
     },
     {
         "id": 3,
         "name": "Bud Light",
-        "email": "paulnovacovici@gmail.com"
+        "email": "paulnovacovici@gmail.com",
+        "items": [
+            {
+                "name": "Lime",
+                "SKUs": [
+                    "12PK 500ML BTL",
+                    "30PK 16OZ BTL"
+                ]
+            }
+        ]
     }
 ]

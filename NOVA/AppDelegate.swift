@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-enum Environment: String {
+enum ProjectEnvironment: String {
     case dev
     case prod
     case none
 }
 
-var environment: Environment = .none
+var environment: ProjectEnvironment = .none
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

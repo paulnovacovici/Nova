@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Store: Codable, Identifiable {
+struct StoreDTO: Codable, Identifiable {
     var id: Int?
     var name: String
     var address: String?

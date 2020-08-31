@@ -11,7 +11,7 @@ import Firebase
 
 struct HistoryView: View {
     @EnvironmentObject var locationManager : LocationManager
-    @State private var data = [StoreCheckIn]()
+    @State private var data = [StoreCheckInDTO]()
     
     // For tracking how long the user pulls up on last element in list
     @State var timer = Timer.publish(every: 0.1, on: .main, in: .tracking).autoconnect()
@@ -79,7 +79,7 @@ struct HistoryView: View {
     
     func loadShimmerData() {
         for i in 0...19 {
-            let temp = StoreCheckIn()
+            let temp = StoreCheckInDTO()
             
             self.data.append(temp)
             
@@ -91,7 +91,7 @@ struct HistoryView: View {
     func loadData() {
         let dbRef = FirestoreReferenceManager.root.collection(FirebaseKeys.CollectionPath.checkIns)
         
-        dbRef.whereField("userId", isEqualTo: Auth.auth().currentUser!.uid).order(by: StoreCheckIn.CodingKeys.arrivalTime.rawValue, descending: true).limit(to: 20).getDocuments { (snap, err) in
+        dbRef.whereField("userId", isEqualTo: Auth.auth().currentUser!.uid).order(by: StoreCheckInDTO.CodingKeys.arrivalTime.rawValue, descending: true).limit(to: 20).getDocuments { (snap, err) in
             if let err = err {
                 // TODO: show error
                 print(err.localizedDescription)
@@ -103,7 +103,7 @@ struct HistoryView: View {
             
             for doc in snap!.documents {
                 let result = Result {
-                    try doc.data(as: StoreCheckIn.self)
+                    try doc.data(as: StoreCheckInDTO.self)
                 }
                 
                 switch result {
