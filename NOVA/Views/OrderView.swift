@@ -66,7 +66,7 @@ struct OrderView: View {
         NavigationView {
             Form {
                 Picker(selection: $orderModel.itemSelection.onChange(itemSelectionChanged), label: Text("Item")) {
-                    ForEach(0 ..< orderModel.brandItems.count) { i in
+                    ForEach(0 ..< orderModel.brandItems.count, id: \.self) { i in
                         Text(self.orderModel.brandItems[i].name)
                             .tag(i)
                     }

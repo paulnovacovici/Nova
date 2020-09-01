@@ -13,7 +13,7 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
-class StoreForm: ObservableObject {
+class StoreFormViewModel: ObservableObject {
     @Published var managerIn = false
     @Published var spokeTo = ""
     @Published var shelfStocked = false
@@ -106,6 +106,10 @@ class StoreForm: ObservableObject {
         }
     }
     
+    func canNext() -> Bool {
+        return storeIndex > 0 && brandIndex > 0
+    }
+    
     func canSubmit() -> Bool {
         return storeIndex > 0 && images.count > 0 && brandIndex > 0
     }
@@ -115,13 +119,7 @@ class StoreForm: ObservableObject {
 struct CheckInView: View {
     @EnvironmentObject var locationManager : LocationManager
     @EnvironmentObject var session: SessionStore
-    @ObservedObject var storeForm = StoreForm()
-    @State var showImagePickerView = false
-    @State var showNewOrderView = false
-    @State var isLoading = false
-    @State var showAlert = false
-    @State var alertText = ""
-    @State var orders: [OrderViewModel] = []
+    @ObservedObject var storeForm = StoreFormViewModel()
  
     
     var body: some View {
@@ -129,15 +127,8 @@ struct CheckInView: View {
             ZStack {
                 Form {
                     Section {
-                        Picker(selection: $storeForm.brandIndex, label: Text("Brand Name")) {
-                            ForEach(0 ..< mockBrandData.count) { i in
-                                VStack(alignment: .leading) {
-                                    Text(mockBrandData[i].name)
-                                }.tag(i)
-                            }
-                        }
                         Picker(selection: $storeForm.storeIndex, label: Text("Store Name")) {
-                            ForEach(0 ..< mockStoreData.count) { i in
+                            ForEach(0 ..< mockStoreData.count, id: \.self) { i in
                                 VStack(alignment: .leading) {
                                     Text(mockStoreData[i].name)
                                     mockStoreData[i].fullAddress.map { address in
@@ -150,87 +141,132 @@ struct CheckInView: View {
                                 }.tag(i)
                             }
                         }
+                        
+                        Picker(selection: $storeForm.brandIndex, label: Text("Brand Name")) {
+                            ForEach(0 ..< mockBrandData.count, id: \.self) { i in
+                                VStack(alignment: .leading) {
+                                    Text(mockBrandData[i].name)
+                                }.tag(i)
+                            }
+                        }
+                        
                         DatePicker("Arrival time", selection: $storeForm.arrivalTime)
                     }
-                    
-                    Section {
-                        Toggle(isOn: $storeForm.managerIn) {
-                            Text("Is the manager there?")
-                        }
-                        
-                        if storeForm.managerIn {
-                            TextField("Manager Name", text: $storeForm.spokeTo)
-                        }
-                        
-                        Toggle(isOn: $storeForm.shelfStocked) {
-                            Text("Is the shelf stocked?")
-                        }
-                        
-                        TextField("Does anything need to be ordered?", text: $storeForm.needs)
-                    }
-                    
-                    Section(header: Text("ORDERS")) {
-                        ForEach(0 ..< orders.count, id: \.self) { i in
-                            OrderRow(order: self.orders[i])
-                        }
-                        Button(action: {
-                            self.showNewOrderView.toggle()
-                        }) {
-                            HStack {
-                                Text("Add Order")
-                                Image(systemName: "plus")
-                            }
-                        }.sheet(isPresented: $showNewOrderView) { 
-                            OrderView(brand: self.storeForm.brand, orders: self.$orders)
-                        }
-                    }
-                    
-                    if !self.storeForm.images.isEmpty{
-                        Section {
-                            PhotoRow(photos: self.storeForm.images)
-                        }.listRowInsets(EdgeInsets())
-                    }
-                    
-                    Section(header: Text("PHOTOS")) {
-                        Button(action: {
-                            
-                            self.storeForm.images.removeAll()
-
-                            self.showImagePickerView.toggle()
-                            
-                        }) {
-                            HStack{
-                                if self.storeForm.images.isEmpty{
-                                    Text("Select Photos")
-                                } else {
-                                    Text("Reselect Photos")
-                                }
-                                Image(systemName: "photo")
-                            }
-                        }
-                        .sheet(isPresented: $showImagePickerView) {
-                            TPImagePicker(images: self.$storeForm.images)
-                        }
-                    }
                 }
-                
-                if self.isLoading {
-                    LoadingView()
-                }
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Error"), message: Text(alertText))
             }
             .navigationBarTitle("Check-in")
             .navigationBarItems(
                 leading: cancelButton,
-                trailing: submitButton)
+                trailing: nextButton)
         }
     }
     
     var cancelButton: some View {
         Button(action: {
             self.storeForm.reset()
+        }) {
+            Text("Cancel")
+        }
+    }
+    
+    var nextButton: some View {
+        NavigationLink(destination: StoreBrandInfoView(storeForm: self.storeForm)){
+            Text("Next")
+        }.disabled(!self.storeForm.canNext())
+    }
+    
+}
+
+struct StoreBrandInfoView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var storeForm: StoreFormViewModel
+    @State var showNewOrderView = false
+    @State var isLoading = false
+    @State var orders: [OrderViewModel] = []
+    @State var showImagePickerView = false
+    @State var showAlert = false
+    @State var alertText = ""
+
+    var body: some View {
+        ZStack {
+            Form {
+                Section(header: Text("ORDERS")) {
+                    ForEach(0 ..< orders.count, id: \.self) { i in
+                        OrderRow(order: self.orders[i])
+                    }
+                    Button(action: {
+                        self.showNewOrderView.toggle()
+                    }) {
+                        HStack {
+                            Text("Add Order")
+                            Image(systemName: "plus")
+                        }
+                    }.sheet(isPresented: $showNewOrderView) {
+                        OrderView(brand: self.storeForm.brand, orders: self.$orders)
+                    }
+                }
+                
+                Section(header: Text("ADDITIONAL INFO")) {
+                    Toggle(isOn: $storeForm.managerIn) {
+                        Text("Is the manager there?")
+                    }
+                    
+                    TextField("Who did you speak to?", text: $storeForm.spokeTo)
+
+                    
+                    Toggle(isOn: $storeForm.shelfStocked) {
+                        Text("Is the shelf stocked?")
+                    }
+                }
+                
+                
+                
+                
+                Section(header: Text("PHOTOS")) {
+                    if !self.storeForm.images.isEmpty{
+                        Section {
+                            PhotoRow(photos: self.storeForm.images)
+                        }.listRowInsets(EdgeInsets())
+                    }
+                    
+                    Button(action: {
+                        
+                        self.storeForm.images.removeAll()
+
+                        self.showImagePickerView.toggle()
+                        
+                    }) {
+                        HStack{
+                            if self.storeForm.images.isEmpty{
+                                Text("Select Photos")
+                            } else {
+                                Text("Reselect Photos")
+                            }
+                            Image(systemName: "photo")
+                        }
+                    }
+                    .sheet(isPresented: $showImagePickerView) {
+                        TPImagePicker(images: self.$storeForm.images)
+                    }
+                }
+            }
+            if self.isLoading {
+                LoadingView()
+            }
+        }
+        
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text(alertText))
+        }
+        .navigationBarTitle("Check In", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: cancelButton, trailing: submitButton)
+    }
+    
+    var cancelButton: some View {
+        Button(action: {
+            self.storeForm.reset()
+            self.presentationMode.wrappedValue.dismiss()
         }) {
             Text("Cancel")
         }
