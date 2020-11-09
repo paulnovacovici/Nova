@@ -89,7 +89,7 @@
 		33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTabView.swift; sourceTree = "<group>"; };
 		33075DDD24CE861E0066DFD2 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		33075DDF24CE94A80066DFD2 /* RouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteMapView.swift; sourceTree = "<group>"; };
-		33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulticolorPolyline.swift; path = NOVA/Views/MulticolorPolyline.swift; sourceTree = SOURCE_ROOT; };
+		33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
 		3323CC6024F338AF00CF93F7 /* StoreDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDTO.swift; sourceTree = "<group>"; };
 		3323CC6224F339E400CF93F7 /* mockStoreData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockStoreData.json; sourceTree = "<group>"; };
 		3323CC6624F34F0700CF93F7 /* mockBrandData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockBrandData.json; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		3323CC6F24FC87FE00CF93F7 /* OrderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDTO.swift; sourceTree = "<group>"; };
 		338C0DA524E9DAD300626260 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		338C0DCE24E9ED6B00626260 /* NOVA Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOVA Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		338C0DCF24E9ED6D00626260 /* Dev-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-info.plist"; sourceTree = SOURCE_ROOT; };
+		338C0DCF24E9ED6D00626260 /* Dev-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-info.plist"; sourceTree = "<group>"; };
 		339B919724C5107900585999 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		339B919924C5196E00585999 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		339B919B24C5246200585999 /* ClockInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInView.swift; sourceTree = "<group>"; };
@@ -122,8 +122,8 @@
 		33EDA2E024D74E2B002632A7 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		33EDA2E224D77183002632A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		33EDA2E424DBC940002632A7 /* TextFieldContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
-		33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyboardResponder.swift; path = NOVA/Views/KeyboardResponder.swift; sourceTree = SOURCE_ROOT; };
-		33EDA2EA24E0D4BD002632A7 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = SOURCE_ROOT; };
+		33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		33EDA2EA24E0D4BD002632A7 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		5F44B944B48C23198A329809 /* Pods-NOVA Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOVA Dev.debug.xcconfig"; path = "Target Support Files/Pods-NOVA Dev/Pods-NOVA Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		6F324A111D61D4562FF20FA9 /* Pods_NOVA_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOVA_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,17 +155,17 @@
 		33075DD724CC94220066DFD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				33D9867B2499BAB10047618B /* ContentView.swift */,
-				33EDA2E224D77183002632A7 /* SettingsView.swift */,
 				33EDA2E024D74E2B002632A7 /* AuthView.swift */,
-				339B919D24C52D9A00585999 /* TimerView.swift */,
-				339B919B24C5246200585999 /* ClockInView.swift */,
-				33075DDD24CE861E0066DFD2 /* RouteView.swift */,
-				339B919724C5107900585999 /* HistoryView.swift */,
 				33F7AC1C24BA7F2B00EF9E51 /* CheckInView.swift */,
+				339B919B24C5246200585999 /* ClockInView.swift */,
+				33D9867B2499BAB10047618B /* ContentView.swift */,
+				339B919724C5107900585999 /* HistoryView.swift */,
 				338C0DA524E9DAD300626260 /* LoadingView.swift */,
-				33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */,
 				3323CC6C24F7812400CF93F7 /* OrderView.swift */,
+				33075DDD24CE861E0066DFD2 /* RouteView.swift */,
+				33EDA2E224D77183002632A7 /* SettingsView.swift */,
+				339B919D24C52D9A00585999 /* TimerView.swift */,
+				33075DDB24CE37A20066DFD2 /* UIKitTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,13 +173,13 @@
 		33075DD824CC944C0066DFD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33E2150D2507BC8800D320A5 /* Extensions.swift */,
+				33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */,
 				33EDA2EA24E0D4BD002632A7 /* KeyboardGuardian.swift */,
 				33EDA2E624DBD0E2002632A7 /* KeyboardResponder.swift */,
+				33075DD924CC94920066DFD2 /* LocationManager.swift */,
 				33075DE124CE95D70066DFD2 /* MulticolorPolyline.swift */,
 				339B919924C5196E00585999 /* TimerManager.swift */,
-				33075DD924CC94920066DFD2 /* LocationManager.swift */,
-				33EDA2DE24D74872002632A7 /* FirebaseSessionManager.swift */,
-				33E2150D2507BC8800D320A5 /* Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -187,21 +187,21 @@
 		339B919F24C65D8300585999 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3323CC6924F34F7E00CF93F7 /* BrandDTO.swift */,
 				339B91A024C65DBA00585999 /* Data.swift */,
+				3323CC6F24FC87FE00CF93F7 /* OrderDTO.swift */,
 				339B91A224C65E3200585999 /* StoreCheckInDTO.swift */,
 				3323CC6024F338AF00CF93F7 /* StoreDTO.swift */,
-				3323CC6924F34F7E00CF93F7 /* BrandDTO.swift */,
-				3323CC6F24FC87FE00CF93F7 /* OrderDTO.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		339B91A424C65FA900585999 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3323CC6624F34F0700CF93F7 /* mockBrandData.json */,
 				339B91A724C65FFB00585999 /* mockCheckInData.json */,
 				3323CC6224F339E400CF93F7 /* mockStoreData.json */,
-				3323CC6624F34F0700CF93F7 /* mockBrandData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -209,10 +209,10 @@
 		33AC03F424E4EE16005265E3 /* View Representables */ = {
 			isa = PBXGroup;
 			children = (
-				33EDA2E424DBC940002632A7 /* TextFieldContainerView.swift */,
-				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
 				339B91A924C6A6FF00585999 /* MainMapView.swift */,
 				33075DDF24CE94A80066DFD2 /* RouteMapView.swift */,
+				33D5FFBA24C4DA2C001461B6 /* TPImagePicker.swift */,
+				33EDA2E424DBC940002632A7 /* TextFieldContainerView.swift */,
 			);
 			path = "View Representables";
 			sourceTree = "<group>";
@@ -220,10 +220,10 @@
 		33D9866B2499BAB10047618B = {
 			isa = PBXGroup;
 			children = (
-				33D986762499BAB10047618B /* NOVA */,
-				33D986752499BAB10047618B /* Products */,
-				F5B00E082661FB86FAF5F35F /* Pods */,
 				68911BEE92476388B3548F52 /* Frameworks */,
+				33D986762499BAB10047618B /* NOVA */,
+				F5B00E082661FB86FAF5F35F /* Pods */,
+				33D986752499BAB10047618B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,19 +239,19 @@
 		33D986762499BAB10047618B /* NOVA */ = {
 			isa = PBXGroup;
 			children = (
-				33AC03F424E4EE16005265E3 /* View Representables */,
-				33075DD824CC944C0066DFD2 /* Supporting Files */,
-				33075DD724CC94220066DFD2 /* Views */,
-				339B91A424C65FA900585999 /* Resources */,
 				339B919F24C65D8300585999 /* Models */,
+				33D9867F2499BAB40047618B /* Preview Content */,
+				339B91A424C65FA900585999 /* Resources */,
+				33075DD824CC944C0066DFD2 /* Supporting Files */,
+				33AC03F424E4EE16005265E3 /* View Representables */,
+				33075DD724CC94220066DFD2 /* Views */,
 				33D986772499BAB10047618B /* AppDelegate.swift */,
-				33D986792499BAB10047618B /* SceneDelegate.swift */,
 				33D9867D2499BAB40047618B /* Assets.xcassets */,
-				33D986822499BAB50047618B /* LaunchScreen.storyboard */,
-				33D986852499BAB50047618B /* Info.plist */,
 				338C0DCF24E9ED6D00626260 /* Dev-info.plist */,
 				33EDA2DC24D74569002632A7 /* GoogleService-Info.plist */,
-				33D9867F2499BAB40047618B /* Preview Content */,
+				33D986852499BAB50047618B /* Info.plist */,
+				33D986822499BAB50047618B /* LaunchScreen.storyboard */,
+				33D986792499BAB10047618B /* SceneDelegate.swift */,
 			);
 			path = NOVA;
 			sourceTree = "<group>";
@@ -553,6 +553,7 @@
 				33D986832499BAB50047618B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -567,7 +568,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NOVA/Preview Content\"";
 				DEVELOPMENT_TEAM = X2XN2M82X8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Dev-info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NOVA/Dev-info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,7 +590,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NOVA/Preview Content\"";
 				DEVELOPMENT_TEAM = X2XN2M82X8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Dev-info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NOVA/Dev-info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
