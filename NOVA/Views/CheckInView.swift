@@ -13,6 +13,19 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseAuth
 
+class QuestionAnswerViewModel: ObservableObject {
+    var question: String = ""
+    @Published var answer: String = ""
+    var type: Type
+    var answers: [String]?
+    
+    init(_ question: QuestionDTO) {
+        self.question = question.question
+        self.type = question.type
+        self.answers = question.answers
+    }
+}
+
 class StoreFormViewModel: ObservableObject {
     @Published var managerIn = false
     @Published var spokeTo = ""
@@ -58,7 +71,7 @@ class StoreFormViewModel: ObservableObject {
                 completion("Can't get image data please try again")
                 return
             }
-
+            
             let imageName = UUID().uuidString
             let storageRef = Storage.storage().reference()
                 .child(FirebaseKeys.CollectionPath.images)
@@ -95,14 +108,14 @@ class StoreFormViewModel: ObservableObject {
                                 
                                 completion(nil)
                             }
-
+                            
                         } catch let error {
                             completion(error.localizedDescription)
                         }
                     }
                 }
             }
-
+            
         }
     }
     
@@ -120,7 +133,7 @@ struct CheckInView: View {
     @EnvironmentObject var locationManager : LocationManager
     @EnvironmentObject var session: SessionStore
     @ObservedObject var storeForm = StoreFormViewModel()
- 
+    
     
     var body: some View {
         NavigationView {
@@ -133,10 +146,10 @@ struct CheckInView: View {
                                     Text(mockStoreData[i].name)
                                     mockStoreData[i].fullAddress.map { address in
                                         Text(address)
-                                        .font(.footnote)
-                                        .foregroundColor(.gray)
-                                        .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
-                                        .lineLimit(1)
+                                            .font(.footnote)
+                                            .foregroundColor(.gray)
+                                            .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                                            .lineLimit(1)
                                     }
                                 }.tag(i)
                             }
@@ -186,7 +199,9 @@ struct StoreBrandInfoView: View {
     @State var showImagePickerView = false
     @State var showAlert = false
     @State var alertText = ""
-
+    @State var questionAnswers: [QuestionAnswerViewModel] = []
+    
+    
     var body: some View {
         ZStack {
             Form {
@@ -207,15 +222,10 @@ struct StoreBrandInfoView: View {
                 }
                 
                 Section(header: Text("ADDITIONAL INFO")) {
-                    Toggle(isOn: $storeForm.managerIn) {
-                        Text("Is the manager there?")
-                    }
-                    
-                    TextField("Who did you speak to?", text: $storeForm.spokeTo)
-
-                    
-                    Toggle(isOn: $storeForm.shelfStocked) {
-                        Text("Is the shelf stocked?")
+                    ForEach(0 ..< questionAnswers.count, id: \.self) { i in
+                        VStack(alignment: .leading) {
+                            QuestionView(questions: self.$questionAnswers, tag: i)
+                        }.tag(i)
                     }
                 }
                 
@@ -232,7 +242,7 @@ struct StoreBrandInfoView: View {
                     Button(action: {
                         
                         self.storeForm.images.removeAll()
-
+                        
                         self.showImagePickerView.toggle()
                         
                     }) {
@@ -254,7 +264,10 @@ struct StoreBrandInfoView: View {
                 LoadingView()
             }
         }
-        
+        .onAppear {
+            self.questionAnswers = storeForm.brand.questions?.map { QuestionAnswerViewModel($0)
+            } ?? []
+        }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Error"), message: Text(alertText))
         }
@@ -326,19 +339,83 @@ struct PhotoRow : View {
                 ForEach(self.photos, id: \.self){photo in
                     
                     Image(uiImage: photo)
-                    .resizable()
-                    .renderingMode(.original)
-                    .frame(width: 155, height: 155)
-                    .cornerRadius(5)
-                    .padding(.leading, 15)
+                        .resizable()
+                        .renderingMode(.original)
+                        .frame(width: 155, height: 155)
+                        .cornerRadius(5)
+                        .padding(.leading, 15)
                 }
             }
         }.frame(height: 185)
     }
 }
 
+struct QuestionView: View {
+    @State var boolAnswer: Bool = false
+    @State var answerSelection: Int = 0
+    @Binding var questions: [QuestionAnswerViewModel]
+    var tag = 0
+    
+    init(questions: Binding<[QuestionAnswerViewModel]>, tag: Int) {
+        self._questions = questions
+        self.boolAnswer = false
+        self.tag = tag
+    }
+    
+    var answerOptions: [String] {
+        guard let answerOptions = self.questions[tag].answers else {
+            return ["None"]
+        }
+        return ["None"] + answerOptions
+    }
+    
+    var body: some View {
+        
+        VStack {
+            if self.questions[tag].type == .bool{
+                Toggle(isOn: $boolAnswer.onChange({ (newValue) in
+                    self.questions[tag].answer = self.boolAnswer.toPolarAnswer()
+                })) {
+                    Text(self.questions[tag].question)
+                }
+            } else if self.questions[tag].type == .string {
+                if self.questions[tag].answers != nil {
+                    Picker(selection: $answerSelection.onChange(answerSelectionChange), label: Text(self.questions[tag].question)) {
+                        ForEach(0 ..< answerOptions.count, id: \.self) { i in
+                            Text(answerOptions[i])
+                                .tag(i)
+                        }
+                    }
+                } else {
+                    TextField(self.questions[tag].question, text: $questions[tag].answer)
+                }
+            } else {
+                EmptyView()
+            }
+        }.onAppear {
+            // TODO: Default answer for questions with selected answers
+            // Probably can accomplish verification by moving selected index
+            // to question answer view model. Then we don't need a default answer
+            // and can verify index != 0.
+            self.questions[tag].answer = self.questions[tag].type == .bool ? self.boolAnswer.toPolarAnswer() : ""
+        }
+    }
+    
+    func answerSelectionChange(_ selection: Int) {
+        self.questions[tag].answer = answerOptions[selection]
+    }
+}
+
 struct StoreForm_Previews: PreviewProvider {
+    @State static var questions: [QuestionAnswerViewModel] = [QuestionAnswerViewModel(mockBrandData[2].questions![0])]
     static var previews: some View {
-             CheckInView().environmentObject(LocationManager())
+        //             CheckInView().environmentObject(LocationManager())
+        Group {
+            NavigationView {
+                Form {
+                    QuestionView(questions: $questions, tag: 0)
+                }
+            }
+        }
     }
 }

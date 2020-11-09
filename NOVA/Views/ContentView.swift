@@ -56,18 +56,6 @@ struct ContentView: View {
     }
 }
 
-// Extend Bindings to have an onChange handler
-extension Binding {
-    func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
-        return Binding(
-            get: { self.wrappedValue },
-            set: { selection in
-                self.wrappedValue = selection
-                handler(selection)
-        })
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environmentObject((SessionStore()))

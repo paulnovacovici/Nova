@@ -54,6 +54,17 @@
                     "12 PK 1500 ML PET"
                 ]
             }
+        ],
+        "questions": [
+            {
+                "type": "string",
+                "question": "Who is their water provider?"
+            },
+            {
+                "type": "string",
+                "question": "Reason for Visit:",
+                "answers": ["Sell In", "New Account", "Follow Up"]
+            }
         ]
     },
     {

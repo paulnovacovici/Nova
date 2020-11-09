@@ -16,8 +16,8 @@ class OrderViewModel: ObservableObject {
     @Published var expectedDeliveryDate: Date = Date()
     var brand: BrandDTO
     
-    var brandItems: [Item] {
-        return [Item(name: "None", SKUs: [])] + brand.items
+    var brandItems: [ItemDTO] {
+        return [ItemDTO(name: "None", SKUs: [])] + brand.items
     }
     var itemSKUs: [String] {
         return ["None"] + brandItems[itemSelection].SKUs

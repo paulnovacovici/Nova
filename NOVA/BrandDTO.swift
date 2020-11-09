@@ -13,11 +13,22 @@ struct BrandDTO: Codable, Identifiable {
     var id: Int?
     var name: String
     var email: String
-    var items: [Item]
+    var items: [ItemDTO]
+    var questions: [QuestionDTO]?
 }
 
-struct Item: Codable {
+struct ItemDTO: Codable {
     var name: String
     var SKUs: [String]
+}
+
+enum Type: String, Codable {
+    case bool, string
+}
+
+struct QuestionDTO: Codable {
+    var question: String
+    var type: Type
+    var answers: [String]?
 }
 
